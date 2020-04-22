@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    command: >
+      sh -c "npm run serve"
+    restart: always
+    ports:
+      - 127.0.0.1:8080:8080/tcp
+    volumes:
+      - ./frontend:/app
