@@ -49,8 +49,9 @@ def generate_value(is_binary):
         return t
 
 
-def generate_data(n_hospitals, n_patients_total, seed):
+def generate_data(n_hospitals, n_patients_total, target_indices, noise_level=0.1, seed=123):
     random.seed(seed)
+    np.random.seed(seed)
     matrix = []
     for _ in range(n_patients_total):
         patient = []
@@ -59,11 +60,23 @@ def generate_data(n_hospitals, n_patients_total, seed):
                 patient.append(generate_value(t == BIN))
         matrix.append(patient)
     matrix = np.array(matrix)
+    # replace the target values by the "actual values"
+    n_features = matrix.shape[1] - len(target_indices)
+    is_target = np.zeros(matrix.shape[1], dtype=bool)
+    is_target[target_indices] = True
+    coefficients = np.random.rand(n_features, len(target_indices))
+    noise = np.random.rand(n_patients_total, len(target_indices)) * noise_level
+    matrix[:, is_target] = np.dot(matrix[:, ~is_target], coefficients) + noise
+    for t in target_indices:
+        t_mean = np.mean(matrix[:, t])
+        matrix[:, t] = [1 if matrix[i, t] > t_mean else 0 for i in range(n_patients_total)]
     flatten_columns = [c for cs in ATTRIBUTE_NAMES for c in cs]
     os.makedirs(DATA_DIR, exist_ok=True)
     for h in range(n_hospitals):
         data_frame = pd.DataFrame(data=matrix[h::n_hospitals, :], columns=flatten_columns)
         data_frame.to_csv(os.path.join(DATA_DIR, f"hospital{h}.csv"), index=False)
+    data_frame = pd.DataFrame(data=matrix, columns=flatten_columns)
+    data_frame.to_csv(os.path.join(DATA_DIR, f"hospitals.csv"), index=False)
 
 
-# generate_data(10, 500, 123)
+generate_data(10, 1000, [52, 53, 54, 55, 56, 57])
