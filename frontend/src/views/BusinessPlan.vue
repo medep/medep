@@ -18,6 +18,6 @@
 <script>
 
     export default {
-        name: 'Solution'
+        name: 'BusinessPlan'
     }
 </script>

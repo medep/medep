@@ -22,7 +22,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item link>
+                <v-list-item link to="/info-dashboard">
                     <v-list-item-action>
                         <v-icon>mdi-finance</v-icon>
                     </v-list-item-action>
@@ -31,7 +31,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item link>
+                <v-list-item link to="/use-cases">
                     <v-list-item-action>
                         <v-icon>mdi-virus</v-icon>
                     </v-list-item-action>
@@ -50,7 +50,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item link>
+                <v-list-item link to="/business-plan">
                     <v-list-item-action>
                         <v-icon>mdi-briefcase</v-icon>
                     </v-list-item-action>

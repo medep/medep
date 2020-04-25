@@ -20,8 +20,23 @@ Vue.use(VueRouter)
   },
   {
     path: '/solution',
-    name: 'Solution',
+    name: 'solution',
     component: () => import(/* webpackChunkName: "solution" */ '../views/Solution.vue')
+  },
+  {
+    path: '/business-plan',
+    name: 'business plan',
+    component: () => import(/* webpackChunkName: "solution" */ '../views/BusinessPlan.vue')
+  },
+  {
+    path: '/use-cases',
+    name: 'use cases',
+    component: () => import(/* webpackChunkName: "solution" */ '../views/UseCases.vue')
+  },
+  {
+    path: '/info-dashboard',
+    name: 'info dashboard',
+    component: () => import(/* webpackChunkName: "solution" */ '../views/InfoDashboard.vue')
   }
 ]
 
