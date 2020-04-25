@@ -10,17 +10,56 @@
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Home</v-list-item-title>
+                        <v-list-item-title>Introduction</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
+                <v-list-item link to="/solution">
+                    <v-list-item-action>
+                        <v-icon>mdi-lightbulb</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Solution</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>mdi-finance</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Info dashboard</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>mdi-virus</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Use cases</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+
                 <v-list-item link to="/keyword-explorer">
                     <v-list-item-action>
                         <v-icon>mdi-database-search</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Keyword explorer</v-list-item-title>
+                        <v-list-item-title>Document library</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
+
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>mdi-briefcase</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Business plan</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+
             </v-list>
         </v-navigation-drawer>
 
