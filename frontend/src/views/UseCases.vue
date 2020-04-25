@@ -1,17 +1,8 @@
 <template>
     <v-container
-            fluid
+            fluid class="fill-height" style="margin:0; padding:0;"
     >
-        <v-row
-                align="center"
-                justify="center"
-        >
-            <v-col>
-
-
-
-            </v-col>
-        </v-row>
+        <iframe frameborder="0" src="/case1.html" style="width:100%;" class="fill-height"></iframe>
     </v-container>
 </template>
 
