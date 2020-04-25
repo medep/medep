@@ -3,11 +3,11 @@
             fluid
     >
         <v-row
-                align="center"
-                justify="center"
         >
             <v-col>
-
+                <div style="height:300px;">
+                <info-graph></info-graph>
+                </div>
 
 
             </v-col>
@@ -17,7 +17,10 @@
 
 <script>
 
+    import InfoGraph from "../components/InfoGraph";
+
     export default {
-        name: 'InfoDashboard'
+        name: 'InfoDashboard',
+        components: {InfoGraph,}
     }
 </script>
