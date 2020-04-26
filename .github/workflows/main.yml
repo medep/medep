@@ -13,5 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy with fabric
-      run: fab deploy
+      run: |
+      ssh-add keys/medep_rsa
+      fab -I keys/medep_rsa deploy
 
