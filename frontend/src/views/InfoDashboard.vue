@@ -321,7 +321,23 @@
                 </v-col>
             </v-row>
         </div>
+
+        <v-snackbar
+                v-model="snackbar"
+                :timeout="5000"
+        >
+            Notice: the data displayed here is not official.
+            <v-btn
+                    color="blue"
+                    text
+                    @click="snackbar = false"
+            >
+                Close
+            </v-btn>
+        </v-snackbar>
+
     </v-container>
+
 </template>
 
 <script>
@@ -332,7 +348,7 @@
         name: 'InfoDashboard',
         components: {InfoGraph,},
         watch: {
-            country: function(val) {
+            country: function (val) {
                 if (this.displayError) {
                     this.displayError = false;
                     setTimeout(() => {
@@ -343,6 +359,7 @@
         },
         data: function () {
             return {
+                'snackbar': true,
                 'displayError': true,
                 'country': 'Slovenia',
                 'items': [
