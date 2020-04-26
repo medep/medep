@@ -12,11 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy with fabric
-      env:
-        SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
-        echo $SSH_KEY > medep_rsa
-        chmod 0400 medep_rsa
         eval `ssh-agent -s`
-        ssh-add medep_rsa
+        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         fab deploy
