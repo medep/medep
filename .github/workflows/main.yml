@@ -16,5 +16,5 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
         eval `ssh-agent -s`
-        ssh-add - <<< "${SSH_KEY}"
+        echo "$SSH_KEY" | tr -d '\r' | ssh-add -
         fab deploy
