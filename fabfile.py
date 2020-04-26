@@ -7,7 +7,6 @@ base_path = os.path.abspath(os.path.dirname(__file__))
 
 env.forward_agent = True
 env.user = 'ubuntu'
-env.key_filename = os.path.join(base_path, 'keys/medep_rsa')
 env.host_string = 'medep.org:22'
 
 @task

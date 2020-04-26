@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     container: janezkranjc/fabric-alpine
-
     steps:
     - uses: actions/checkout@v2
     - name: Deploy with fabric
+      env:
+        SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
+        echo $SSH_KEY > medep_rsa
         chmod 0400 keys/medep_rsa
         eval `ssh-agent -s`
-        ssh-add keys/medep_rsa
+        ssh-add medep_rsa
         fab deploy
-
