@@ -42,9 +42,9 @@
                             src="../../public/case_studies/case3/header.png"
                     >
                     </v-img>
-                    <v-card-title>Modeling of sentiment and clinical outcomes</v-card-title>
-                    <v-card-text>Deep learning models were used to explore possible modeling opportunities related to
-                        COVID-19 outcome
+                    <v-card-title>Distributed/federated modeling of clinical outcomes</v-card-title>
+                    <v-card-text>Deep learning and streaming models were used to explore possible modeling opportunities related to
+                        COVID-19 outcome, while preserving privacy of the data.
                     </v-card-text>
                 </v-card>
             </v-col>
