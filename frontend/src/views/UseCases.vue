@@ -15,7 +15,9 @@
                     >
                     </v-img>
                     <v-card-title>COVID-19 vaccine-related literature exploration</v-card-title>
-                    <v-card-text>Topic modeling of COVID-19 vaccine-related literature.</v-card-text>
+                    <v-card-text>Topic modeling of COVID-19 vaccine-related literature.
+                    <br /> <a href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case1/case1.ipynb" target=_blank>Github</a>
+                    </v-card-text>
                 </v-card>
             </v-col>
             <v-col class="col-4">
@@ -29,7 +31,9 @@
                     >
                     </v-img>
                     <v-card-title>Document landscape exploration</v-card-title>
-                    <v-card-text>Interactive 2D representations of more than 30k COVID-19 related papers</v-card-text>
+                    <v-card-text>Interactive 2D representations of more than 30k COVID-19 related papers
+                    <br /> <a href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case2/case2.ipynb" target=_blank>Github</a>
+                    </v-card-text>
                 </v-card>
             </v-col>
             <v-col class="col-4">
@@ -45,6 +49,7 @@
                     <v-card-title>Distributed/federated modeling of clinical outcomes</v-card-title>
                     <v-card-text>Deep learning and streaming models were used to explore possible modeling opportunities related to
                         COVID-19 outcome, while preserving privacy of the data.
+                        <br /> <a href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case3/case3.ipynb" target=_blank>Github</a>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -62,6 +67,7 @@
                     </v-card-title>
                     <v-card-text>Discovering novel drug candidates by using the MeDEP's convenient API and text mining
                         functionality.
+                     <br /> <a href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case4/case4.ipynb" target=_blank>Github</a>
                     </v-card-text>
                 </v-card>
             </v-col>

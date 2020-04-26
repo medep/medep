@@ -18,7 +18,7 @@
                     case '2':
                         return '/case_studies/case2/case2.html'
                     case '3':
-                        return '/case_studies/case3/case3_2.html'
+                        return '/case_studies/case3/case3.html'
                     case '4':
                         return '/case_studies/case4/case4.html'
                 }
