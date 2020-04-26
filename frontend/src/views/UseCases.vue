@@ -11,14 +11,14 @@
                     <v-img
                             class="white--text align-end"
                             height="200px"
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                            src="../../public/case_studies/case1/header.png"
                     >
                         <v-card-title>Use case 1</v-card-title>
                     </v-img>
 
 
-                    <v-card-subtitle>Some subtitle</v-card-subtitle>
-                    <v-card-text>This is a text</v-card-text>
+                    <v-card-subtitle>COVID-19 vaccine-related literature exploration</v-card-subtitle>
+                    <v-card-text>Topic modeling of COVID-19 vaccine-related literature.</v-card-text>
                 </v-card>
             </v-col>
             <v-col class="col-4">
@@ -28,14 +28,14 @@
                     <v-img
                             class="white--text align-end"
                             height="200px"
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                            src="../../public/case_studies/case2/header.png"
                     >
                         <v-card-title>Use case 1</v-card-title>
                     </v-img>
 
 
-                    <v-card-subtitle>Some subtitle</v-card-subtitle>
-                    <v-card-text>This is a text</v-card-text>
+                    <v-card-subtitle>Document landscape exploration</v-card-subtitle>
+                    <v-card-text>Interactive 2D representations of more than 30k COVID-19 related papers</v-card-text>
                 </v-card>
             </v-col>
             <v-col class="col-4">
@@ -45,14 +45,14 @@
                     <v-img
                             class="white--text align-end"
                             height="200px"
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                            src="../../public/case_studies/case3/header.png"
                     >
                         <v-card-title>Use case 3</v-card-title>
                     </v-img>
 
 
-                    <v-card-subtitle>Some subtitle</v-card-subtitle>
-                    <v-card-text>This is a text</v-card-text>
+                    <v-card-subtitle>Modeling of sentiment and clinical outcomes</v-card-subtitle>
+                    <v-card-text>Deep learning models were used to explore possible modeling opportunities related to COVID-19 outcome</v-card-text>
                 </v-card>
             </v-col>
             <v-col class="col-4">
@@ -62,14 +62,14 @@
                     <v-img
                             class="white--text align-end"
                             height="200px"
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                            src="../../public/case_studies/case4/header.png"
                     >
                         <v-card-title>Use case 4</v-card-title>
                     </v-img>
 
 
-                    <v-card-subtitle>Some subtitle</v-card-subtitle>
-                    <v-card-text>This is a text</v-card-text>
+                    <v-card-subtitle>Assessing potential COVID-19 drug candidates via automated literature exploration</v-card-subtitle>
+                    <v-card-text>Discovering novel drug candidates by using the MeDEP's convenient API and text mining functionality.</v-card-text>
                 </v-card>
             </v-col>
 
