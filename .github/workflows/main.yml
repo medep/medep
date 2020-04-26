@@ -16,7 +16,7 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
         echo $SSH_KEY > medep_rsa
-        chmod 0400 keys/medep_rsa
+        chmod 0400 medep_rsa
         eval `ssh-agent -s`
         ssh-add medep_rsa
         fab deploy
