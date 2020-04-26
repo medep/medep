@@ -19,17 +19,17 @@
                         fixed-tabs
                 >
                     <v-tab>
-                        Medical Protocol
+                        Clinical protocols
                     </v-tab>
+					<v-tab>
+					    Drugs
+					</v-tab>
                     <v-tab>
                         Legislation changes
                     </v-tab>
-                    <v-tab>
-                        Another Selection
-                    </v-tab>
-                    <v-tab>
-                        Another Tab
-                    </v-tab>
+					<v-tab>
+						News
+					</v-tab>
 
 
                     <v-tab-item>
@@ -40,6 +40,33 @@
                             <v-card-text>blabla</v-card-text>
                         </v-card>
                     </v-tab-item>
+
+            <v-tab-item>
+                        <v-card
+                                flat
+                                tile
+                        >
+                            <v-card-text>
+							Drugs used to treat patients with COVID-19:<br />
+<ul>
+<li>Favipiravir</li>
+<li>Chloroquine and hydroxychloroquine</li>
+<li>Azytromicin</li>
+<li>Remdesivir</li>
+<li>Lopinavir/ritonavir (Kaletra)</li>
+<li>Umifenovir</li>
+<li>Tocilizumab</li>
+<li>Losartan</li>
+</ul>
+							
+							</v-card-text>
+                        </v-card>
+                    </v-tab-item>
+
+
+
+
+
 
                     <v-tab-item>
                         <v-card
@@ -202,26 +229,18 @@
 							</v-card-text>
                         </v-card>
                     </v-tab-item>
-
-                    <v-tab-item>
+					
+					
+					         <v-tab-item>
                         <v-card
                                 flat
                                 tile
                         >
-                            <v-card-text>neki tretjega.</v-card-text>
+                            <v-card-text>The data about news related to COVID-19 have not been prepared yet.</v-card-text>
                         </v-card>
                     </v-tab-item>
-
-                    <v-tab-item>
-                        <v-card
-                                flat
-                                tile
-                        >
-                            <v-card-text>arlarl</v-card-text>
-                        </v-card>
-                    </v-tab-item>
-
-
+					
+					
                 </v-tabs>
             </v-col>
         </v-row>
