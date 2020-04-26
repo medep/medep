@@ -2,23 +2,6 @@
     <v-container
             fluid
     >
-        <v-row>
-            <v-col class="col-12">
-            Info Dashboard joins many data sources and efficiently presents the relevant information
-            related to the covid-19 pandemic, for a given country:<br/>
-            <ul>
-                <li>number of currently infected people</li>
-                <li>stock exchange sentiment</li>
-                <li>clinical protocols</li>
-                <li>data related to the drugs used</li>
-                <li>legislation changes in the country, e.g., declaration of quarantine</li>
-                <li>news</li>
-            </ul>
-
-            The stock exchange sentiment is computed from the main stock exchange index of the chosen country
-            and reflects the trend the current trend of stock prices, as compared to their global trend.<br/>
-            </v-col>
-        </v-row>
 
         <v-row>
             <v-col class="col-12">
@@ -31,6 +14,32 @@
 
             </v-col>
         </v-row>
+
+        <v-row class="mb-3">
+            <v-col class="col-12">
+
+                <v-banner
+                        elevation="3"
+                        color="grey"
+                        class="font-weight-light lighten-4"
+                >
+                    Info Dashboard joins many data sources and efficiently presents the relevant information
+                    related to the covid-19 pandemic, for a given country:<br/>
+                    <ul>
+                        <li>number of currently infected people</li>
+                        <li>stock exchange sentiment</li>
+                        <li>clinical protocols</li>
+                        <li>data related to the drugs used</li>
+                        <li>legislation changes in the country, e.g., declaration of quarantine</li>
+                        <li>news</li>
+                    </ul>
+
+                    The stock exchange sentiment is computed from the main stock exchange index of the chosen country
+                    and reflects the trend the current trend of stock prices, as compared to their global trend.<br/>
+                </v-banner>
+            </v-col>
+        </v-row>
+
         <div v-if="country==='Slovenia'">
             <v-row
             >
@@ -321,6 +330,7 @@
                 </v-col>
             </v-row>
         </div>
+
         <div v-if="country!=='Slovenia'">
             <v-row class="col-12" v-if="!displayError">
                 <v-col class="text-center col-12">
