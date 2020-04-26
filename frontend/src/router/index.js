@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import UseCase from '../views/UseCase'
 
 Vue.use(VueRouter)
 
@@ -34,9 +35,9 @@ const routes = [
         component: () => import(/* webpackChunkName: "usecase" */ '../views/UseCases.vue')
     },
     {
-        path: '/use-cases/1',
-        name: 'use case 1',
-        component: () => import(/* webpackChunkName: "usecase1" */ '../views/UseCase1.vue')
+        path: '/use-cases/:id',
+        name: 'use case',
+        component: UseCase,
     },
     {
         path: '/info-dashboard',
