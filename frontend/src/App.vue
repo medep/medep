@@ -22,6 +22,24 @@
                     </v-list-item-content>
                 </v-list-item>
 
+                <v-list-item link to="/keyword-explorer">
+                    <v-list-item-action>
+                        <v-icon> mdi-state-machine</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>COVID-19 literature</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link to="/dataset-directory">
+                    <v-list-item-action>
+                        <v-icon>mdi-database-search</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Dataset directory</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
                 <v-list-item link to="/info-dashboard">
                     <v-list-item-action>
                         <v-icon>mdi-finance</v-icon>
@@ -40,15 +58,6 @@
                     </v-list-item-content>
                 </v-list-item>
 
-
-                <v-list-item link to="/keyword-explorer">
-                    <v-list-item-action>
-                        <v-icon>mdi-database-search</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Document library</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
 
                 <v-list-item link to="/business-plan">
                     <v-list-item-action>

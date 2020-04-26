@@ -43,6 +43,11 @@ const routes = [
         path: '/info-dashboard',
         name: 'info dashboard',
         component: () => import(/* webpackChunkName: "dashboard" */ '../views/InfoDashboard.vue')
+    },
+    {
+        path: '/dataset-directory',
+        name: 'dataset directory',
+        component: () => import(/* webpackChunkName: "directory" */ '../views/DatasetDirectory.vue')
     }
 ]
 
