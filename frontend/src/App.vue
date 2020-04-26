@@ -1,6 +1,18 @@
 <template>
     <v-app>
+
+        <v-app-bar
+                app
+                clipped-left
+                color="green"
+                dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
+            <v-toolbar-title><v-avatar tile class="mr-6"><img src="./assets/logo-1.png"></v-avatar> MeDEP - Medical exploration platform</v-toolbar-title>
+        </v-app-bar>
+
         <v-navigation-drawer
+                clipped
                 v-model="drawer"
                 app
         >
@@ -71,15 +83,6 @@
 
             </v-list>
         </v-navigation-drawer>
-
-        <v-app-bar
-                app
-                color="indigo"
-                dark
-        >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-            <v-toolbar-title>MeDEP - Medical exploration platform</v-toolbar-title>
-        </v-app-bar>
 
         <v-content>
             <router-view></router-view>
