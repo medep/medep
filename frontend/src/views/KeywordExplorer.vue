@@ -14,10 +14,10 @@
         <v-row>
             <v-col>
                 <v-card
-                        color="primary lighten-2"
+                        color="primary lighten-1"
                         dark
                 >
-                    <v-card-title class="headline primary lighten-3">
+                    <v-card-title class="headline primary lighten-2">
                         COVID-19 Explorer
                     </v-card-title>
                     <v-card-text>
