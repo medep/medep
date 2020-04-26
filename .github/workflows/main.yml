@@ -1,0 +1,21 @@
+name: Deploy on medep.org
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    container: janezkranjc/fabric-alpine
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy with fabric
+      run: |
+        chmod 0400 keys/medep_rsa
+        eval `ssh-agent -s`
+        ssh-add keys/medep_rsa
+        fab deploy
+

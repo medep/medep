@@ -1,6 +1,18 @@
 <template>
     <v-app>
+
+        <v-app-bar
+                app
+                clipped-left
+                color="green"
+                dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
+            <v-toolbar-title><v-avatar tile class="mr-6"><img src="./assets/logo-1.png"></v-avatar> MeDEP - Medical exploration platform</v-toolbar-title>
+        </v-app-bar>
+
         <v-navigation-drawer
+                clipped
                 v-model="drawer"
                 app
         >
@@ -19,6 +31,24 @@
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>Solution</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link to="/keyword-explorer">
+                    <v-list-item-action>
+                        <v-icon> mdi-state-machine</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>COVID-19 literature</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link to="/dataset-directory">
+                    <v-list-item-action>
+                        <v-icon>mdi-database-search</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Dataset directory</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
@@ -41,15 +71,6 @@
                 </v-list-item>
 
 
-                <v-list-item link to="/keyword-explorer">
-                    <v-list-item-action>
-                        <v-icon>mdi-database-search</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Document library</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
                 <v-list-item link to="/business-plan">
                     <v-list-item-action>
                         <v-icon>mdi-briefcase</v-icon>
@@ -62,15 +83,6 @@
 
             </v-list>
         </v-navigation-drawer>
-
-        <v-app-bar
-                app
-                color="indigo"
-                dark
-        >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-            <v-toolbar-title>Application</v-toolbar-title>
-        </v-app-bar>
 
         <v-content>
             <router-view></router-view>

@@ -141,7 +141,7 @@
 
             loadTable() {
                 this.table_loading = true;
-                fetch('http://covid19explorer.ijs.si/gp/api?keyword=' + this.selected_keyword.value)
+                fetch('https://covid19explorer.medep.org/gp/api?keyword=' + this.selected_keyword.value)
                     .then(res => res.json())
                     .then(res => {
                         this.data = res
@@ -176,7 +176,7 @@
                 this.isLoading = true
 
                 // Lazily load input items
-                fetch('http://covid19explorer.ijs.si/gp/autosuggest_keywords',
+                fetch('https://covid19explorer.medep.org/gp/autosuggest_keywords',
                     {
                         method: 'POST',
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},

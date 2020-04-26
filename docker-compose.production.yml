@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  covid19proxy:
+    build:
+      context: ./covid19proxy
+    expose:
+      - 80
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.backend=covid19proxy"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:covid19explorer.medep.org"
+      - "traefik.port=80"
+      - "traefik.enable=true"
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    expose:
+      - 80
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.backend=medep"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:medep.org,www.medep.org"
+      - "traefik.port=80"
+      - "traefik.enable=true"
+
+networks:
+  web:
+    external: true
