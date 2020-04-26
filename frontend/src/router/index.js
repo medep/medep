@@ -14,9 +14,6 @@ const routes = [
     {
         path: '/keyword-explorer',
         name: 'Keyword explorer',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "keyword" */ '../views/KeywordExplorer.vue')
     },
     {
@@ -55,6 +52,12 @@ const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes
+})
+
+router.onError(error => {
+    if (/loading chunk \d* failed./i.test(error.message)) {
+        window.location.reload()
+    }
 })
 
 export default router
