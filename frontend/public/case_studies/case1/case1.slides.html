@@ -13214,7 +13214,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## the code corresponding to c1.</span>
@@ -13283,7 +13283,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;covid-19&quot;</span><span class="p">,</span><span class="s2">&quot;vaccines&quot;</span><span class="p">,</span><span class="s2">&quot;treatment&quot;</span><span class="p">]</span>
@@ -13323,7 +13323,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
@@ -13350,11 +13350,11 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">enx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">topics</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOPIC </span><span class="si">{}</span><span class="s2"> KEYWORDS: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enx</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;AND &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">topic</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13371,16 +13371,16 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, &#39;0.029*&#34;vaccine&#34; + 0.010*&#34;immune&#34; + 0.007*&#34;system&#34; + 0.007*&#34;immunity&#34; + 0.007*&#34;vaccines,&#34;&#39;)
-(1, &#39;0.010*&#34;pathogen&#34; + 0.008*&#34;significant&#34; + 0.006*&#34;lupus&#34; + 0.006*&#34;review&#34; + 0.006*&#34;water&#34;&#39;)
-(2, &#39;0.015*&#34;vaccine&#34; + 0.012*&#34;treatment&#34; + 0.007*&#34;patient&#34; + 0.005*&#34;potential&#34; + 0.005*&#34;widely&#34;&#39;)
-(3, &#39;0.013*&#34;COVID-19&#34; + 0.009*&#34;resident&#34; + 0.009*&#34;pneumonia&#34; + 0.009*&#34;nursing&#34; + 0.008*&#34;towards&#34;&#39;)
-(4, &#39;0.016*&#34;treatment&#34; + 0.016*&#34;vaccine&#34; + 0.008*&#34;disease&#34; + 0.007*&#34;veterinary&#34; + 0.007*&#34;periodontal&#34;&#39;)
-(5, &#39;0.018*&#34;treatment&#34; + 0.014*&#34;patient&#34; + 0.011*&#34;acute&#34; + 0.009*&#34;respiratory&#34; + 0.008*&#34;severe&#34;&#39;)
-(6, &#39;0.018*&#34;treatment&#34; + 0.011*&#34;week&#34; + 0.008*&#34;month&#34; + 0.008*&#34;treat&#34; + 0.007*&#34;case&#34;&#39;)
-(7, &#39;0.043*&#34;vaccine&#34; + 0.016*&#34;animal&#34; + 0.008*&#34;vaccines.&#34; + 0.008*&#34;human&#34; + 0.007*&#34;include&#34;&#39;)
-(8, &#39;0.011*&#34;treatment&#34; + 0.011*&#34;disease&#34; + 0.010*&#34;COVID-19&#34; + 0.009*&#34;safety&#34; + 0.008*&#34;Symptoma&#34;&#39;)
-(9, &#39;0.026*&#34;vaccine&#34; + 0.018*&#34;disease&#34; + 0.018*&#34;infectious&#34; + 0.009*&#34;strategy&#34; + 0.008*&#34;vaccination&#34;&#39;)
+<pre>TOPIC 0 KEYWORDS: 0.012*&#34;staff&#34; AND  0.010*&#34;disease&#34; AND  0.009*&#34;treatment&#34; 
+TOPIC 1 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.006*&#34;animal&#34; AND  0.006*&#34;treatment&#34; 
+TOPIC 2 KEYWORDS: 0.014*&#34;disease&#34; AND  0.011*&#34;infectious&#34; AND  0.008*&#34;vaccine&#34; 
+TOPIC 3 KEYWORDS: 0.023*&#34;vaccine&#34; AND  0.010*&#34;respiratory&#34; AND  0.007*&#34;delivery&#34; 
+TOPIC 4 KEYWORDS: 0.010*&#34;treatment&#34; AND  0.010*&#34;group&#34; AND  0.006*&#34;disease&#34; 
+TOPIC 5 KEYWORDS: 0.036*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.009*&#34;disease&#34; 
+TOPIC 6 KEYWORDS: 0.000*&#34;vaccine&#34; AND  0.000*&#34;animal&#34; AND  0.000*&#34;human&#34; 
+TOPIC 7 KEYWORDS: 0.014*&#34;treatment&#34; AND  0.014*&#34;week&#34; AND  0.009*&#34;patient&#34; 
+TOPIC 8 KEYWORDS: 0.024*&#34;vaccine&#34; AND  0.015*&#34;treatment&#34; AND  0.010*&#34;vaccination&#34; 
+TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010*&#34;treatment&#34; 
 </pre>
 </div>
 </div>
@@ -13399,7 +13399,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_docs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -13415,7 +13415,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13432,7 +13432,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_docs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -13448,7 +13448,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
