@@ -5,6 +5,25 @@
         <v-row>
             <v-col class="col-12">
 
+            To je test, ne se sikirat. Drugs used to treat patients with COVID-19:<br/>
+                                    <ul>
+                                        <li>Favipiravir</li>
+                                        <li>Chloroquine and hydroxychloroquine</li>
+                                        <li>Azytromicin</li>
+                                        <li>Remdesivir</li>
+                                        <li>Lopinavir/ritonavir (Kaletra)</li>
+                                        <li>Umifenovir</li>
+                                        <li>Tocilizumab</li>
+                                        <li>Losartan</li>
+                                    </ul>
+
+
+            </v-col>
+        </v-row>
+
+        <v-row>
+            <v-col class="col-12">
+
                 <v-select
                         v-model="country"
                         :items="items"
