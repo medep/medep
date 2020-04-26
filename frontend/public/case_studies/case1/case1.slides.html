@@ -13214,7 +13214,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## the code corresponding to c1.</span>
@@ -13283,7 +13283,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;covid-19&quot;</span><span class="p">,</span><span class="s2">&quot;vaccines&quot;</span><span class="p">,</span><span class="s2">&quot;treatment&quot;</span><span class="p">]</span>
@@ -13323,7 +13323,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
@@ -13350,11 +13350,12 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">enx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">topics</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOPIC </span><span class="si">{}</span><span class="s2"> KEYWORDS: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enx</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;AND &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">topic</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOPIC </span><span class="si">{}</span><span class="s2"> KEYWORDS: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;AND &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13371,16 +13372,16 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>TOPIC 0 KEYWORDS: 0.012*&#34;staff&#34; AND  0.010*&#34;disease&#34; AND  0.009*&#34;treatment&#34; 
-TOPIC 1 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.006*&#34;animal&#34; AND  0.006*&#34;treatment&#34; 
-TOPIC 2 KEYWORDS: 0.014*&#34;disease&#34; AND  0.011*&#34;infectious&#34; AND  0.008*&#34;vaccine&#34; 
-TOPIC 3 KEYWORDS: 0.023*&#34;vaccine&#34; AND  0.010*&#34;respiratory&#34; AND  0.007*&#34;delivery&#34; 
-TOPIC 4 KEYWORDS: 0.010*&#34;treatment&#34; AND  0.010*&#34;group&#34; AND  0.006*&#34;disease&#34; 
-TOPIC 5 KEYWORDS: 0.036*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.009*&#34;disease&#34; 
-TOPIC 6 KEYWORDS: 0.000*&#34;vaccine&#34; AND  0.000*&#34;animal&#34; AND  0.000*&#34;human&#34; 
-TOPIC 7 KEYWORDS: 0.014*&#34;treatment&#34; AND  0.014*&#34;week&#34; AND  0.009*&#34;patient&#34; 
-TOPIC 8 KEYWORDS: 0.024*&#34;vaccine&#34; AND  0.015*&#34;treatment&#34; AND  0.010*&#34;vaccination&#34; 
-TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010*&#34;treatment&#34; 
+<pre>TOPIC 1 KEYWORDS: staff AND medical AND COVID-19 AND include 
+TOPIC 2 KEYWORDS: vaccine AND vaccination AND disease AND generate 
+TOPIC 3 KEYWORDS: vaccine AND treatment AND disease AND treat 
+TOPIC 4 KEYWORDS: treatment AND group AND pneumonia AND macrolide 
+TOPIC 5 KEYWORDS: treatment AND patient AND disease AND infectious 
+TOPIC 6 KEYWORDS: treatment AND patient AND control AND show 
+TOPIC 7 KEYWORDS: vaccine AND treatment AND disease AND Symptoma 
+TOPIC 8 KEYWORDS: disease AND safety AND vaccine AND treat 
+TOPIC 9 KEYWORDS: vaccine AND animal AND vaccines. AND veterinary 
+TOPIC 10 KEYWORDS: treatment AND testing AND vaccination AND number 
 </pre>
 </div>
 </div>
@@ -13399,7 +13400,7 @@ TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_docs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -13415,7 +13416,7 @@ TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13432,7 +13433,7 @@ TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_docs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -13448,7 +13449,7 @@ TOPIC 9 KEYWORDS: 0.020*&#34;vaccine&#34; AND  0.010*&#34;animal&#34; AND  0.010
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
