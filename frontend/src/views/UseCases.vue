@@ -30,7 +30,7 @@
                             height="200px"
                             src="../../public/case_studies/case2/header.png"
                     >
-                        <v-card-title>Use case 1</v-card-title>
+                        <v-card-title>Use case 2</v-card-title>
                     </v-img>
 
 
