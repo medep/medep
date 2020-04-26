@@ -7,6 +7,7 @@
 <script>
     import LineChart from './LineChart.js'
     import moment from 'moment';
+    import "./LinePlugin";
 
     let timeFormat = 'MM/DD/YYYY HH:mm';
 
@@ -51,6 +52,31 @@
                 },
                 options: {
                     responsive: true,
+                    lineAtIndex: {
+                        'scale': 'A',
+                        'points': [
+                            {
+                                index: 10,
+                                label: 'Phase 1'
+                            },
+                            {
+                                index: 20,
+                                label: 'Phase 2'
+                            },
+                            {
+                                index: 30,
+                                label: 'Phase 3'
+                            },
+                            {
+                                index: 45,
+                                label: 'Phase 4'
+                            },
+                            {
+                                index: 58,
+                                label: 'Phase 5'
+                            },
+                        ],
+                    },
                     maintainAspectRatio: false,
                     scales: {
                         xAxes: [{

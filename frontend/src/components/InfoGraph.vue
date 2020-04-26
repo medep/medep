@@ -7,6 +7,7 @@
 <script>
     import LineChart from './LineChart.js'
     import moment from 'moment';
+    import "./LinePlugin";
 
     let timeFormat = 'MM/DD/YYYY HH:mm';
 
