@@ -12,3 +12,9 @@ services:
       - 127.0.0.1:8080:8080/tcp
     volumes:
       - ./frontend:/app
+  backend-umcm:
+    build:
+      context: ./backend
+    restart: always
+    ports:
+      - 127.0.0.1:8090:8080/tcp
