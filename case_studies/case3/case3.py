@@ -1,26 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## Sharing data among hospitals
-# 
-# 1. More data means better models.
-# 2. Problem: possibly, data must not leave the hospital that acquired them
-# 
-# Thus, rather than the data, a model is passed among the hospitals. By doing so,
-# 
-# 1. The model is trained using all available data.
-# 2. No hospital has to share the data.
-# 
-# Models that support this learinng setting:
-# 
-# 1. Data streaming models, e.g., AM Rules, iSOUP trees etc.
-# 2. Models learned incrementaly, e.g. neural networks
-# 
-# ## TODO: references, describe the data
-
-# In[13]:
-
-
 import os
 import subprocess
 import pandas as pd
@@ -28,17 +5,21 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader
+import plotly.graph_objects as go
 import warnings
 
 warnings.filterwarnings('ignore')
 
-STREAM_MODEL = r'java -cp moa.jar moa.DoTask moa.tasks.EvaluatePrequentialMultiLabel '                r'-l (rules.multilabel.AMRulesMultiLabelClassifier -g 5 '                r'-L (rules.multilabel.functions.MultiLabelNaiveBayes -l NaiveBayes) '                r'-A (OddsRatioScore -p CantellisInequality) -S MultiTargetVarianceRatio '                r'-e RelativeMeanAbsoluteDeviationMT -w UniformWeightedVoteMultiLabel -O SelectAllOutputs '                r'-I SelectAllInputs -F NoFeatureRanking) '                r'-s (MultiTargetArffFileStream -f {} -c 53-58) -f 100 -d {}'
+STREAM_MODEL = r'java -cp moa.jar moa.DoTask moa.tasks.EvaluatePrequentialMultiLabel ' \
+               r'-l (rules.multilabel.AMRulesMultiLabelClassifier -g 5 ' \
+               r'-L (rules.multilabel.functions.MultiLabelNaiveBayes -l NaiveBayes) ' \
+               r'-A (OddsRatioScore -p CantellisInequality) -S MultiTargetVarianceRatio ' \
+               r'-e RelativeMeanAbsoluteDeviationMT -w UniformWeightedVoteMultiLabel -O SelectAllOutputs ' \
+               r'-I SelectAllInputs -F NoFeatureRanking) ' \
+               r'-s (MultiTargetArffFileStream -f {} -c 53-58) -f 100 -d {}'
 MEASURES = ["Exact Match", "Accuracy", "Hamming Score", "Precision", "Recall", "F-Measure"]
 # do not show accuracy since it is basically the same as Hamming
 MEASURES_FOR_PLOTTING = ["Exact Match", "Hamming Score", "Precision", "Recall", "F-Measure"]
-
-
-# In[2]:
 
 
 def evaluate(ys_true, ys_predicted):
@@ -119,7 +100,7 @@ class Network:
         # round predictions
         return np.rint(predictions).tolist()
 
-    
+
 def create_model(is_stream, data_file='data/hospitals.arff', n_hospitals=10, batch=100):
     if is_stream:
         assert n_hospitals == 10
@@ -159,21 +140,17 @@ def create_model(is_stream, data_file='data/hospitals.arff', n_hospitals=10, bat
 # 
 # - AM Rules
 # - Neural network
-
-# In[14]:
-
-
-am_rules_curves = create_model(True)
-nn_curves = create_model(False)
+def create_streaming_model():
+    return create_model(True)
 
 
-# In[10]:
+def create_neural_network_model():
+    return create_model(False)
 
 
-import plotly.graph_objects as go
-
-
-def create_plot(data, measures):
+def create_plot(data, measures=None, model_type="", show=True):
+    if measures is None:
+        measures = MEASURES_FOR_PLOTTING
     fig = go.Figure()
     xs = list(range(1, len(data[measures[0]]) + 1))
     for m in measures:
@@ -184,11 +161,10 @@ def create_plot(data, measures):
                 name=m
             )
         )
-
     buttons = [dict(label='All',
                     method='update',
                     args=[{'visible': [True for _ in measures]},
-                          {'title': 'All',
+                          {'title': 'All Evaluation Measures',
                            'showlegend': True}]
                     )
                ]
@@ -201,23 +177,17 @@ def create_plot(data, measures):
         buttons.append(button)
 
     fig.update_layout(
-        updatemenus=[go.layout.Updatemenu(active=0, buttons=buttons)],
+        updatemenus=[go.layout.Updatemenu(active=0, buttons=list(buttons))])
+    fig.update_layout(
         xaxis=dict(tickmode='linear', tick0=1, dtick=1),
         xaxis_title="number of hospitals",
-        yaxis_title="",
+        yaxis_title="Model quality",
+        title=f"{model_type} Models for different number of hospitals",
         font=dict(size=18, color="#7f7f7f", family="Courier New, monospace")
     )
-    fig.show()
+    if show:
+        fig.show()
+    else:
+        fig.write_html(f"{model_type}-models.html")
 
-
-# In[11]:
-
-
-create_plot(nn_curves, MEASURES_FOR_PLOTTING)
-
-
-# In[12]:
-
-
-create_plot(am_rules_curves, MEASURES_FOR_PLOTTING)
 
