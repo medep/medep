@@ -13202,11 +13202,11 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Case-study-example----vaccination-related-literature-topic-detection">Case study example -- vaccination related literature topic detection<a class="anchor-link" href="#Case-study-example----vaccination-related-literature-topic-detection">&#182;</a></h1><p>In the first case study, we will explore, whether the existing COVID-19-related literature, that focuses on vaccines and treatment programs clusters in well defined topics that could help medical professionals further explore the existing studies. The case study is structured as follows.</p>
+<h1 id="Case-study-example:-Literature-related-to-vaccination-and-treatment-plans">Case study example: Literature related to vaccination and treatment plans<a class="anchor-link" href="#Case-study-example:-Literature-related-to-vaccination-and-treatment-plans">&#182;</a></h1><p>In the first case study, we will explore, whether the existing COVID-19-related literature, that focuses on vaccines and treatment programs clusters in well defined topics that could help medical professionals further explore the existing studies. The case study is structured as follows.</p>
 <ol>
-<li>Description of the preprocessing machinery and the request-ready API we designed around CORD-19 data set.</li>
-<li>An example run, that is completely interactive</li>
-<li>Discussion of results</li>
+<li>Using unsupervised keyword detection, we annotated all existing COVID-19-related literature</li>
+<li><strong>MeDEP</strong> offers simple API access to the annotated documents</li>
+<li>An example where vaccination-related literature is explored is shown next!</li>
 </ol>
 
 </div>
@@ -13371,16 +13371,16 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, &#39;0.010*&#34;vaccine&#34; + 0.008*&#34;development&#34; + 0.006*&#34;12-year&#34; + 0.006*&#34;stage&#34; + 0.006*&#34;Harris&#34;&#39;)
-(1, &#39;0.013*&#34;treatment&#34; + 0.007*&#34;disease&#34; + 0.006*&#34;infection&#34; + 0.006*&#34;gulae&#34; + 0.006*&#34;treat&#34;&#39;)
-(2, &#39;0.017*&#34;vaccine&#34; + 0.012*&#34;technology&#34; + 0.008*&#34;disease&#34; + 0.008*&#34;vaccines.&#34; + 0.008*&#34;infectious&#34;&#39;)
-(3, &#39;0.021*&#34;vaccine&#34; + 0.017*&#34;disease&#34; + 0.012*&#34;infectious&#34; + 0.009*&#34;treatment&#34; + 0.007*&#34;Symptoma&#34;&#39;)
-(4, &#39;0.014*&#34;COVID-19&#34; + 0.013*&#34;treatment&#34; + 0.009*&#34;control&#34; + 0.007*&#34;patient&#34; + 0.006*&#34;compare&#34;&#39;)
-(5, &#39;0.021*&#34;vaccine&#34; + 0.014*&#34;reaction&#34; + 0.014*&#34;staff&#34; + 0.012*&#34;allergic&#34; + 0.010*&#34;include&#34;&#39;)
-(6, &#39;0.014*&#34;treatment&#34; + 0.009*&#34;vaccination&#34; + 0.006*&#34;model&#34; + 0.006*&#34;equilibrium&#34; + 0.006*&#34;globally&#34;&#39;)
-(7, &#39;0.012*&#34;vaccine&#34; + 0.008*&#34;pathogen&#34; + 0.006*&#34;report&#34; + 0.006*&#34;infection&#34; + 0.006*&#34;vaccination&#34;&#39;)
-(8, &#39;0.017*&#34;vaccine&#34; + 0.007*&#34;treatment&#34; + 0.005*&#34;case&#34; + 0.005*&#34;edible&#34; + 0.005*&#34;vaccines,&#34;&#39;)
-(9, &#39;0.033*&#34;vaccine&#34; + 0.013*&#34;animal&#34; + 0.011*&#34;treatment&#34; + 0.008*&#34;safety&#34; + 0.008*&#34;patient&#34;&#39;)
+<pre>(0, &#39;0.029*&#34;vaccine&#34; + 0.010*&#34;immune&#34; + 0.007*&#34;system&#34; + 0.007*&#34;immunity&#34; + 0.007*&#34;vaccines,&#34;&#39;)
+(1, &#39;0.010*&#34;pathogen&#34; + 0.008*&#34;significant&#34; + 0.006*&#34;lupus&#34; + 0.006*&#34;review&#34; + 0.006*&#34;water&#34;&#39;)
+(2, &#39;0.015*&#34;vaccine&#34; + 0.012*&#34;treatment&#34; + 0.007*&#34;patient&#34; + 0.005*&#34;potential&#34; + 0.005*&#34;widely&#34;&#39;)
+(3, &#39;0.013*&#34;COVID-19&#34; + 0.009*&#34;resident&#34; + 0.009*&#34;pneumonia&#34; + 0.009*&#34;nursing&#34; + 0.008*&#34;towards&#34;&#39;)
+(4, &#39;0.016*&#34;treatment&#34; + 0.016*&#34;vaccine&#34; + 0.008*&#34;disease&#34; + 0.007*&#34;veterinary&#34; + 0.007*&#34;periodontal&#34;&#39;)
+(5, &#39;0.018*&#34;treatment&#34; + 0.014*&#34;patient&#34; + 0.011*&#34;acute&#34; + 0.009*&#34;respiratory&#34; + 0.008*&#34;severe&#34;&#39;)
+(6, &#39;0.018*&#34;treatment&#34; + 0.011*&#34;week&#34; + 0.008*&#34;month&#34; + 0.008*&#34;treat&#34; + 0.007*&#34;case&#34;&#39;)
+(7, &#39;0.043*&#34;vaccine&#34; + 0.016*&#34;animal&#34; + 0.008*&#34;vaccines.&#34; + 0.008*&#34;human&#34; + 0.007*&#34;include&#34;&#39;)
+(8, &#39;0.011*&#34;treatment&#34; + 0.011*&#34;disease&#34; + 0.010*&#34;COVID-19&#34; + 0.009*&#34;safety&#34; + 0.008*&#34;Symptoma&#34;&#39;)
+(9, &#39;0.026*&#34;vaccine&#34; + 0.018*&#34;disease&#34; + 0.018*&#34;infectious&#34; + 0.009*&#34;strategy&#34; + 0.008*&#34;vaccination&#34;&#39;)
 </pre>
 </div>
 </div>
