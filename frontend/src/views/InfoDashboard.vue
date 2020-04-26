@@ -4,20 +4,19 @@
     >
         <v-row>
             <v-col class="col-12">
+            Info Dashboard joins many data sources and efficiently presents the relevant information
+            related to the covid-19 pandemic, for a given country:<br/>
+            <ul>
+                <li>number of currently infected people</li>
+                <li>stock exchange sentiment</li>
+                <li>clinical protocols</li>
+                <li>data related to the drugs used</li>
+                <li>legislation changes in the country, e.g., declaration of quarantine</li>
+                <li>news</li>
+            </ul>
 
-            To je test, ne se sikirat. Drugs used to treat patients with COVID-19:<br/>
-                                    <ul>
-                                        <li>Favipiravir</li>
-                                        <li>Chloroquine and hydroxychloroquine</li>
-                                        <li>Azytromicin</li>
-                                        <li>Remdesivir</li>
-                                        <li>Lopinavir/ritonavir (Kaletra)</li>
-                                        <li>Umifenovir</li>
-                                        <li>Tocilizumab</li>
-                                        <li>Losartan</li>
-                                    </ul>
-
-
+            The stock exchange sentiment is computed from the main stock exchange index of the chosen country
+            and reflects the trend the current trend of stock prices, as compared to their global trend.<br/>
             </v-col>
         </v-row>
 
@@ -345,7 +344,7 @@
                 v-model="snackbar"
                 :timeout="5000"
         >
-            Notice: the data displayed here is not official.
+            Notice: the sentiment data displayed here is not official.
             <v-btn
                     color="blue"
                     text
