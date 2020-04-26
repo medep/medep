@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    expose:
+      - 80
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.backend=medep"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:medep.org,www.medep.org"
+      - "traefik.port=80"
+      - "traefik.enable=true"
+
+networks:
+  web:
+    external: true
