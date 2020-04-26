@@ -12,7 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy with fabric
+      env:
+        SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
         eval `ssh-agent -s`
-        ssh-add - <<< "${{ secrets.SSH_KEY }}"
+        ssh-add - <<< "${SSH_KEY}"
         fab deploy
