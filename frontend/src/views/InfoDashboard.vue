@@ -77,7 +77,7 @@
 
 <script>
 
-    import InfoGraph from "../components/InfoGraph";
+    import InfoGraph from "../components/InfoGraphRealData";
 
     export default {
         name: 'InfoDashboard',
