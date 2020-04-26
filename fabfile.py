@@ -17,7 +17,7 @@ def deploy():
         run('git pull origin master')
 
         puts(magenta("[Updating containers]"))
-        run('docker-compose up -d --build')
+        run('docker-compose -f docker-compose.production.yml up -d --build')
 
 
 
