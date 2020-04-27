@@ -25,7 +25,7 @@
                regarding covid-19? Are you interested only in particular aspects of the disease?
             </i><br/>
             By using AI, more than 30.000 biomedical documents have been automatically annotated with key-words,
-            and our <link :to="{name:'Keyword explorer'}">keyword explorer</link>
+            and our <router-link :to="{name:'Keyword explorer'}">keyword explorer</router-link>
             is ready for rank the documents according to your searches.
             </p>
 
