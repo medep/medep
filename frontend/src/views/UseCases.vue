@@ -20,7 +20,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn @click.stop
-                               href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case1/case1.ipynb"
+                               href="https://github.com/medep/medep/blob/master/frontend/public/case_studies/case1/case1.ipynb"
                                target=_blank>
                             <v-icon class="mr-2">mdi-github</v-icon>
                             Github
@@ -44,7 +44,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn @click.stop
-                               href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case2/case2.ipynb"
+                               href="https://github.com/medep/medep/blob/master/frontend/public/case_studies/case2/case2.ipynb"
                                target=_blank>
                             <v-icon class="mr-2">mdi-github</v-icon>
                             Github
@@ -71,7 +71,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn @click.stop
-                               href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case3/case3.ipynb"
+                               href="https://github.com/medep/medep/blob/master/frontend/public/case_studies/case3/case3.ipynb"
                                target=_blank>
                             <v-icon class="mr-2">mdi-github</v-icon>
                             Github
@@ -98,7 +98,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn @click.stop
-                               href="https://github.com/kingofthedragonmen/mpg/blob/master/frontend/public/case_studies/case4/case4.ipynb"
+                               href="https://github.com/medep/medep/blob/master/frontend/public/case_studies/case4/case4.ipynb"
                                target=_blank>
                             <v-icon class="mr-2">mdi-github</v-icon>
                             Github
