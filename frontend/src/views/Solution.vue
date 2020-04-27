@@ -78,17 +78,7 @@ Imagine the possibilities!
             </v-col>				
 				
         </v-row>
-				
 	 
-	   <v-row align="center" justify="center">
-            <v-col>
-	
-	<h2>Technical details</h2>
-	
-	Our solution
-	
-	</v-col>
-	</v-row>
 	 
 	 
     </v-container>
