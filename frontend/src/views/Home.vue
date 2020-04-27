@@ -27,7 +27,7 @@
         </v-row>
         <v-row class="col-12">
 
-            <v-col class="col-4">
+            <v-col class="col-md-4">
 
                 <v-card>
                     <v-img
@@ -50,7 +50,7 @@
             </v-col>
 
 
-            <v-col class="col-4">
+            <v-col class="col-md-4">
 
                 <v-card>
                     <v-img
@@ -76,7 +76,7 @@
             </v-col>
 
 
-            <v-col class="col-4">
+            <v-col class="col-md-4">
 
                 <v-card>
                     <v-img
