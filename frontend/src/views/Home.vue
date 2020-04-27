@@ -48,7 +48,7 @@
             </p>
 
             <h2>Are you interested in MeDEP?</h2>
-            Click <a link :to="{name:'solution'}">here</a> to learn more.
+            Click <router-link :to="{name:'solution'}">here</router-link> to learn more.
 
 
 
