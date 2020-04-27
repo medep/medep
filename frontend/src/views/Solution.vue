@@ -27,6 +27,11 @@ MeDEP solves many issues related to data acquisition and comes in two flawors: M
 
 MeDEP local is installed within the organization and is integrated with existing information systems by using specially crafted MeDEP connectors.
 
+<v-img
+                            class="white--text align-end"
+                            height="400px"
+                            src="../assets/medep-local"
+                    ></v-img>
 
 </p>
 
