@@ -58,10 +58,7 @@
                             fixed-tabs
                     >
                         <v-tab>
-                            Clinical protocols
-                        </v-tab>
-                        <v-tab>
-                            Drugs
+                            Medical data
                         </v-tab>
                         <v-tab>
                             Legislation changes
@@ -72,32 +69,22 @@
 
 
                         <v-tab-item>
+
+                        <v-tabs fixed-tabs>
+                        <v-tab>
+                            Protocols
+                        </v-tab>
+                            <v-tab>
+                                Drugs
+                            </v-tab>
+
+                            <v-tab-item>
                             <v-card
                                     flat
                                     tile
                             >
                                 <v-card-text>
 
-
-                                    <p>Covid-19 therapy (potential therapeutic options for treating COVID-19):</p>
-                                    <p>Direct effect on SARS-CoV-2:</p>
-                                    <ul class="mb-3">
-                                        <li>Favipiravir</li>
-                                        <li>Chloroquine and hydroxychloroquine</li>
-                                        <li>Azytromicin</li>
-                                        <li>Remdesivir</li>
-                                        <li>Lopinavir/ritonavir (Kaletra)</li>
-                                        <li>Umifenovir</li>
-                                    </ul>
-                                    <p>Indirect effect on SARS-CoV-2:</p>
-                                    <ul class="mb-3">
-                                        <li>Tocilizumab</li>
-                                        <li>Losartan</li>
-                                    </ul>
-                                    <p>Appropriate supportive care needed (Oxygen, anticoagulant treatment,
-                                        &hellip;)</p>
-                                    <p>&nbsp;</p>
-                                    <p>Protocols:</p>
                                     <p>In relation to the phase of the epidemy</p>
                                     <p>Phase 0:</p>
                                     <ul>
@@ -263,30 +250,41 @@
 
                                 </v-card-text>
                             </v-card>
-                        </v-tab-item>
+                            </v-tab-item>
 
-                        <v-tab-item>
+                                                        <v-tab-item>
                             <v-card
                                     flat
                                     tile
                             >
                                 <v-card-text>
-                                    Drugs used to treat patients with COVID-19:<br/>
-                                    <ul>
+
+
+                                    <p>Covid-19 therapy (potential therapeutic options for treating COVID-19):</p>
+                                    <p>Direct effect on SARS-CoV-2:</p>
+                                    <ul class="mb-3">
                                         <li>Favipiravir</li>
                                         <li>Chloroquine and hydroxychloroquine</li>
                                         <li>Azytromicin</li>
                                         <li>Remdesivir</li>
                                         <li>Lopinavir/ritonavir (Kaletra)</li>
                                         <li>Umifenovir</li>
+                                    </ul>
+                                    <p>Indirect effect on SARS-CoV-2:</p>
+                                    <ul class="mb-3">
                                         <li>Tocilizumab</li>
                                         <li>Losartan</li>
                                     </ul>
+                                    <p>Appropriate supportive care needed (Oxygen, anticoagulant treatment,
+                                        &hellip;)</p>
+                                    <p>&nbsp;</p>
 
                                 </v-card-text>
                             </v-card>
-                        </v-tab-item>
+                            </v-tab-item>
 
+                        </v-tabs>
+                        </v-tab-item>
 
                         <v-tab-item>
                             <v-card
