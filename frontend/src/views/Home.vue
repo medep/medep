@@ -18,9 +18,10 @@
 				<p>The listed technicalities are usually not the first thing that comes to mind when talking about data analysis. However, they are very much present 
 				in the highly-regulated domains such as healthcare. <br /><br />
 				
+				
+                <v-banner class="ma-7" color="green" dark elevation="3">
 				Today, data is everywhere. Current technology, including AI, is already capable of doing great things
                 by leveraging data, but the fundamental problem remains:
-                <v-banner class="ma-7" color="green" dark elevation="3">
 				<i>How to efficiently access the data and actually do research with it?</i>
 				</v-banner>
 
