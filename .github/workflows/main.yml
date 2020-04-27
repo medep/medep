@@ -5,9 +5,54 @@ on:
     branches: [ master ]
 
 jobs:
+  build_frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: whoan/docker-build-with-cache-action@v5
+        with:
+          username: medep
+          password: "${{ secrets.GITHUB_TOKEN }}"
+          image_name: medep/medep/frontend
+          tag: latest
+          image_tag: latest
+          push_git_tag: true
+          registry: docker.pkg.github.com
+          context: ./frontend/.
+          build_extra_args: "--compress=true"
+  build_backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: whoan/docker-build-with-cache-action@v5
+        with:
+          username: medep
+          password: "${{ secrets.GITHUB_TOKEN }}"
+          image_name: medep/medep/backend
+          tag: latest
+          image_tag: latest
+          push_git_tag: true
+          registry: docker.pkg.github.com
+          context: ./backend/.
+          build_extra_args: "--compress=true"
+  build_covid19proxy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: whoan/docker-build-with-cache-action@v5
+        with:
+          username: medep
+          password: "${{ secrets.GITHUB_TOKEN }}"
+          image_name: medep/medep/covid19proxy
+          tag: latest
+          image_tag: latest
+          push_git_tag: true
+          registry: docker.pkg.github.com
+          context: ./covid19proxy/.
+          build_extra_args: "--compress=true"
   deploy:
     runs-on: ubuntu-latest
-
+    needs: [build_frontend, build_backend, build_covid19proxy]
     container: janezkranjc/fabric-alpine
     steps:
       - uses: actions/checkout@v2
@@ -18,37 +63,3 @@ jobs:
           eval `ssh-agent -s`
           echo "$SSH_KEY" | tr -d '\r' | ssh-add -
           fab deploy
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: whoan/docker-build-with-cache-action@v5
-        with:
-          username: medep
-          password: "${{ secrets.GITHUB_TOKEN }}"
-          image_name: medep/frontend
-          image_tag: latest
-          push_git_tag: true
-          registry: docker.pkg.github.com
-          context: ./frontend/.
-          build_extra_args: "--compress=true"
-      - uses: whoan/docker-build-with-cache-action@v5
-        with:
-          username: medep
-          password: "${{ secrets.GITHUB_TOKEN }}"
-          image_name: medep/backend
-          image_tag: latest
-          push_git_tag: true
-          registry: docker.pkg.github.com
-          context: ./backend/.
-          build_extra_args: "--compress=true"
-      - uses: whoan/docker-build-with-cache-action@v5
-        with:
-          username: medep
-          password: "${{ secrets.GITHUB_TOKEN }}"
-          image_name: medep/covid19proxy
-          image_tag: latest
-          push_git_tag: true
-          registry: docker.pkg.github.com
-          context: ./covid19proxy/.
-          build_extra_args: "--compress=true"
