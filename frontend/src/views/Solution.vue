@@ -27,9 +27,9 @@ MeDEP solves issues related to data acquisition and comes in two flawors: MeDEP 
 		
 		
 		
-		<v-row class="col-10">
+		<v-row class="col-12">
 
-            <v-col class="col-md-5">
+            <v-col class="col-md-6">
 
                 <v-card>
                     <v-card-subtitle><h3>MeDEP local - Join all organizational data sources</h3><br>
@@ -52,7 +52,7 @@ MeDEP solves issues related to data acquisition and comes in two flawors: MeDEP 
                 </v-card>
             </v-col>
 				
-   <v-col class="col-md-5">
+   <v-col class="col-md-6">
 
                 <v-card>
 				<v-card-subtitle><h3>MeDEP federated - Harness the real power of connected world</h3><br>
