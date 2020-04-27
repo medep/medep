@@ -11,7 +11,7 @@ env.host_string = 'medep.org:22'
 
 @task
 def deploy():
-    with cd('/home/ubuntu/mpg/'):
+    with cd('/home/ubuntu/medep/'):
         puts(magenta("[Pulling master]"))
         run('git pull origin master')
 
