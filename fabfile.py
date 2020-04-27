@@ -16,7 +16,8 @@ def deploy():
         run('git pull origin master')
 
         puts(magenta("[Updating containers]"))
-        run('docker-compose -f docker-compose.production.yml up -d --build')
+        run('docker-compose -f docker-compose.production.yml pull')
+        run('docker-compose -f docker-compose.production.yml up -d')
         run('yes | docker system prune -a')
 
 
