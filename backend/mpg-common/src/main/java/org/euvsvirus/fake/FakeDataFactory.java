@@ -71,7 +71,7 @@ public class FakeDataFactory {
 	}
 
 	static List<Attribute> getRandomAttributes() {
-		List<String> lst = getRandom(ATTRIBUTE_NAMES);
+		List<String> lst = getRandom(ATTRIBUTE_NAMES, randIntBetween(10, 15));
 		List<Attribute> retlist = new ArrayList<>();
 
 		lst.forEach(s -> retlist.add(new Attribute(s, getAttributeType(s))));
