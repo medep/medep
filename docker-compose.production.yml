@@ -26,6 +26,7 @@ services:
       - "traefik.backend=umcm"
       - "traefik.docker.network=web"
       - "traefik.frontend.rule=Host:umcm.medep.org"
+      - "traefik.frontend.headers.customResponseHeaders=AccessControlAllowOrigin:*|Access-Control-Allow-Origin:*"
       - "traefik.port=8080"
       - "traefik.enable=true"
   frontend:
