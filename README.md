@@ -19,10 +19,10 @@ MeDEP solves issues related to data acquisition and comes in two flawors: MeDEP 
 
  <div class="row">
   <div class="column">
-    <img src="frontend/src/assets/medep-local.png" alt="medep local" width="350"  hspace="50">
+    <img src="frontend/src/assets/medep-local.png" alt="medep local" width="300"  hspace="50">
   </div>
   <div class="column">
-    <img src="frontend/src/assets/medep-federated.png" alt="medep federated" width="350"  align="absright">
+    <img src="frontend/src/assets/medep-federated.png" alt="medep federated" width="300">
   </div>
 </div>
 
