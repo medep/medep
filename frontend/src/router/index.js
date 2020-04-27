@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import UseCase from '../views/UseCase'
+import Team from '../views/Team'
 
 Vue.use(VueRouter)
 
@@ -45,7 +46,12 @@ const routes = [
         path: '/dataset-directory',
         name: 'dataset directory',
         component: () => import(/* webpackChunkName: "directory" */ '../views/DatasetDirectory.vue')
-    }
+    },
+        {
+        path: '/team',
+        name: 'team',
+        component: Team,
+    },
 ]
 
 const router = new VueRouter({

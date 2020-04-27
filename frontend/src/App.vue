@@ -70,6 +70,15 @@
                     </v-list-item-content>
                 </v-list-item>
 
+                <v-list-item link to="/team">
+                    <v-list-item-action>
+                        <v-icon>mdi-account-multiple</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>The team</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
  
 
 
