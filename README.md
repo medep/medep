@@ -1,4 +1,4 @@
-# MPG
+# MeDEP - Medical Data Exploitation Platform
 
 ## Get up and running
 ```

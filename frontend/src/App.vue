@@ -8,7 +8,7 @@
                 dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-            <v-toolbar-title><v-avatar tile class="mr-6"><img src="./assets/logo-1.png"></v-avatar> MeDEP - Medical exploration platform</v-toolbar-title>
+            <v-toolbar-title><v-avatar tile class="mr-6"><img src="./assets/logo-1.png"></v-avatar> MeDEP - Medical exploitation platform</v-toolbar-title>
         </v-app-bar>
 
         <v-navigation-drawer

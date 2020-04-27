@@ -51,33 +51,6 @@
             Click <router-link :to="{name:'solution'}">here</router-link> to learn more.
 
 
-
-            Cybersecurity, identity management, persistent and immutable storage, auditing,
-            privacy and much more has to be taken into account.
-
-            All these requirements are met by using specifically designed software solutions,
-            which are often maintained by independent software vendors.
-            That kind of data access is usually not enough to do research.
-
-            Enter the medical data exploitation platform.
-
-2)
-[fensi šmensi overall complexity & hospital IS related gibberish] - martin
-dasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sa
-apache airflow --> periodicne analize
-
-The platform enables faster and more efficient research by providing access to various relevant medical and business-focused data sources. Clean and anonymised data are readily available for use by researchers and business analysts.
-
-
-3)
-Currently, the platform is in prototype phase.
-It allows access to publicly available literature related to novel corona virus. Our search engine goes beyond simple keyword search and uses cutting edge AI approaches to automatically annotate whole scientific documents. We regularly update the database which currently contains more than 30.000 documents.
-
-Our platform also offers a unique view of novel corona virus incidence, coupled with side-by-side information about the stock exchange sentiment, medical protocols, legislation changes.
-
-To showcase the power of our platform, we have prepared four case studies. They encompass visualization and topic detection in existing literature, a cross-hospital predictive novel corona virus modeling scenario, and drug candidate detection.
-
-
             </v-col>
         </v-row>
     </v-container>
