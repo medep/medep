@@ -13202,10 +13202,10 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Case-study-example---potential-therapeutic-target-S-protein-binding-partner-identification">Case study example - potential therapeutic target S-protein binding partner identification<a class="anchor-link" href="#Case-study-example---potential-therapeutic-target-S-protein-binding-partner-identification">&#182;</a></h1><h3 id="Using-our-toolset-we-will-explore-wheather-we-can-swiftly-identify-some-relevant-target-data">Using our toolset we will explore wheather we can swiftly identify some relevant target data<a class="anchor-link" href="#Using-our-toolset-we-will-explore-wheather-we-can-swiftly-identify-some-relevant-target-data">&#182;</a></h3><ol>
-<li>Using out toolset API we will fetch relevant data that is semanatically connected</li>
+<h1 id="Case-study-example---potential-therapeutic-target-S-protein-binding-partner-identification">Case study example - potential therapeutic target S-protein binding partner identification<a class="anchor-link" href="#Case-study-example---potential-therapeutic-target-S-protein-binding-partner-identification">&#182;</a></h1><h3 id="Using-our-toolset-we-will-show-how-by-using-MeDEP,-we-can-identify-some-relevant-drug-targets">Using our toolset we will show how by using MeDEP, we can identify some relevant drug targets<a class="anchor-link" href="#Using-our-toolset-we-will-show-how-by-using-MeDEP,-we-can-identify-some-relevant-drug-targets">&#182;</a></h3><ol>
+<li>Using out MeDEP API we will fetch relevant data that is semanatically connected</li>
 <li>We will use 3 general words as a primary query</li>
-<li>we will display their topics</li>
+<li>We will display their topics</li>
 <li>We will explore on the results</li>
 </ol>
 
@@ -13214,7 +13214,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## the code corresponding to c1.</span>
@@ -13264,12 +13264,10 @@ a.anchor-link {
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[nltk_data] Downloading package wordnet to
-[nltk_data]     C:\Users\jukic\AppData\Roaming\nltk_data...
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package wordnet to /home/blazs/nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
-[nltk_data] Downloading package stopwords to
-[nltk_data]     C:\Users\jukic\AppData\Roaming\nltk_data...
+[nltk_data] Downloading package stopwords to /home/blazs/nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
 </pre>
 </div>
@@ -13282,14 +13280,14 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="First-receptor-related-queries">First receptor-related queries<a class="anchor-link" href="#First-receptor-related-queries">&#182;</a></h1><p>query using: "s-protein", "s-protein-binding","receptor", "adhesion"</p>
+<h1 id="First-receptor-related-queries">First receptor-related queries<a class="anchor-link" href="#First-receptor-related-queries">&#182;</a></h1><p>Query using: "s-protein", "s-protein-binding","receptor", "adhesion"</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;s-protein&quot;</span><span class="p">,</span> <span class="s2">&quot;s-protein-binding&quot;</span><span class="p">,</span><span class="s2">&quot;receptor&quot;</span><span class="p">,</span> <span class="s2">&quot;adhesion&quot;</span><span class="p">]</span>
@@ -13331,7 +13329,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#topic detection</span>
@@ -13341,8 +13339,9 @@ a.anchor-link {
 <span class="n">ldamodel</span> <span class="o">=</span> <span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_topics</span> <span class="o">=</span> <span class="n">NUM_TOPICS</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">passes</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">topics</span> <span class="o">=</span> <span class="n">ldamodel</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">enx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">topics</span><span class="p">):</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOPIC </span><span class="si">{}</span><span class="s2"> KEYWORDS: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;AND &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13359,26 +13358,26 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, u&#39;0.019*&#34;receptor&#34; + 0.016*&#34;human&#34; + 0.013*&#34;SARS-CoV-2&#34; + 0.011*&#34;protein&#34; + 0.011*&#34;binding&#34;&#39;)
-(1, u&#39;0.017*&#34;epitope&#34; + 0.010*&#34;protein&#34; + 0.008*&#34;carbohydrate&#34; + 0.008*&#34;different&#34; + 0.008*&#34;porcine&#34;&#39;)
-(2, u&#39;0.014*&#34;respiratory&#34; + 0.013*&#34;receptor&#34; + 0.013*&#34;fusion&#34; + 0.012*&#34;acute&#34; + 0.011*&#34;adhesion&#34;&#39;)
-(3, u&#39;0.011*&#34;adhesion&#34; + 0.011*&#34;Si-Ni-San&#34; + 0.010*&#34;cell&#34; + 0.008*&#34;vaccine&#34; + 0.007*&#34;adjuvant&#34;&#39;)
-(4, u&#39;0.013*&#34;endothelial&#34; + 0.013*&#34;receptor&#34; + 0.013*&#34;expression&#34; + 0.011*&#34;E-selectin&#34; + 0.009*&#34;macrophage&#34;&#39;)
-(5, u&#39;0.010*&#34;peptide&#34; + 0.007*&#34;Streptococcus&#34; + 0.007*&#34;SARS-CoV&#34; + 0.007*&#34;neutralize&#34; + 0.007*&#34;colonization&#34;&#39;)
-(6, u&#39;0.016*&#34;palate&#34; + 0.014*&#34;palatal&#34; + 0.009*&#34;fusion&#34; + 0.009*&#34;mice.&#34; + 0.007*&#34;coronavirus&#34;&#39;)
-(7, u&#39;0.011*&#34;result&#34; + 0.009*&#34;potentiate&#34; + 0.008*&#34;human&#34; + 0.008*&#34;blend&#34; + 0.008*&#34;indicate&#34;&#39;)
-(8, u&#39;0.016*&#34;villus&#34; + 0.012*&#34;IL-21&#34; + 0.012*&#34;virus&#34; + 0.011*&#34;piglet&#34; + 0.011*&#34;DC-SIGNR&#34;&#39;)
-(9, u&#39;0.012*&#34;binding&#34; + 0.012*&#34;peptide&#34; + 0.009*&#34;spike&#34; + 0.009*&#34;potential&#34; + 0.009*&#34;selection&#34;&#39;)
-(10, u&#39;0.009*&#34;receptor&#34; + 0.008*&#34;virus&#34; + 0.008*&#34;control&#34; + 0.007*&#34;viral&#34; + 0.007*&#34;suggest&#34;&#39;)
-(11, u&#39;0.010*&#34;infection&#34; + 0.010*&#34;function&#34; + 0.009*&#34;carbohydrate&#34; + 0.007*&#34;barrier;&#34; + 0.006*&#34;receptor&#34;&#39;)
-(12, u&#39;0.033*&#34;virus&#34; + 0.020*&#34;receptor&#34; + 0.016*&#34;fiber&#34; + 0.014*&#34;antibody&#34; + 0.013*&#34;protein&#34;&#39;)
-(13, u&#39;0.015*&#34;receptor&#34; + 0.014*&#34;binding&#34; + 0.013*&#34;residue&#34; + 0.012*&#34;cell&#34; + 0.009*&#34;human&#34;&#39;)
-(14, u&#39;0.016*&#34;receptor&#34; + 0.010*&#34;cell&#34; + 0.010*&#34;compound&#34; + 0.008*&#34;S-protein&#34; + 0.008*&#34;marker&#34;&#39;)
-(15, u&#39;0.020*&#34;gene&#34; + 0.016*&#34;group&#34; + 0.012*&#34;expression&#34; + 0.010*&#34;patient&#34; + 0.010*&#34;bibliography&#34;&#39;)
-(16, u&#39;0.019*&#34;neutrophil&#34; + 0.011*&#34;cell&#34; + 0.011*&#34;adhesion&#34; + 0.011*&#34;CEACAMs&#34; + 0.009*&#34;desensitization&#34;&#39;)
-(17, u&#39;0.014*&#34;cell&#34; + 0.009*&#34;piglet&#34; + 0.008*&#34;study&#34; + 0.007*&#34;suggest&#34; + 0.007*&#34;isolate&#34;&#39;)
-(18, u&#39;0.015*&#34;virus&#34; + 0.014*&#34;protein&#34; + 0.013*&#34;receptor&#34; + 0.009*&#34;viral&#34; + 0.008*&#34;target&#34;&#39;)
-(19, u&#39;0.033*&#34;receptor&#34; + 0.007*&#34;enzyme&#34; + 0.007*&#34;system&#34; + 0.006*&#34;predict&#34; + 0.005*&#34;analysis&#34;&#39;)
+<pre>TOPIC 1 KEYWORDS: virus AND fiber AND receptor AND viral 
+TOPIC 2 KEYWORDS: infection AND carbohydrate AND receptor AND palate 
+TOPIC 3 KEYWORDS: neutralize AND SARS-CoV-2 AND entry AND binding 
+TOPIC 4 KEYWORDS: receptor AND response AND activation AND different 
+TOPIC 5 KEYWORDS: receptor AND epitope AND residue AND control 
+TOPIC 6 KEYWORDS: fusion AND protein AND membrane AND without 
+TOPIC 7 KEYWORDS: receptor AND piglet AND suppress AND RSV-induced 
+TOPIC 8 KEYWORDS: virus AND vaccine AND elicit AND immunize 
+TOPIC 9 KEYWORDS: cell AND receptor AND gene AND expression 
+TOPIC 10 KEYWORDS: villus AND virus AND piglet AND infection 
+TOPIC 11 KEYWORDS: bibliography AND database AND Streptococcus AND review 
+TOPIC 12 KEYWORDS: receptor AND Si-Ni-San AND study AND protein 
+TOPIC 13 KEYWORDS: signal AND detection AND receptor AND mediate 
+TOPIC 14 KEYWORDS: isolate AND COVID-19 AND coronavirus AND probiotic 
+TOPIC 15 KEYWORDS: cell AND adhesion AND function AND suggest 
+TOPIC 16 KEYWORDS: receptor AND virus AND protein AND envelope 
+TOPIC 17 KEYWORDS: potentiate AND result AND bradykinin AND mechanism 
+TOPIC 18 KEYWORDS: cell AND S-protein AND protein AND virus 
+TOPIC 19 KEYWORDS: acute AND human AND neutrophil AND respiratory 
+TOPIC 20 KEYWORDS: adhesion AND tumor AND group AND blend 
 </pre>
 </div>
 </div>
@@ -13390,8 +13389,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Main-observations">Main observations<a class="anchor-link" href="#Main-observations">&#182;</a></h1><p>Topics identified by GENSIM's LDA package support our keyword query: virus, protein, receptor, binding, ...
-<font color='red'>there are some intresting topics, lets explore a bit more ...</font></p>
+<h1 id="Main-observations">Main observations<a class="anchor-link" href="#Main-observations">&#182;</a></h1><p>Topics identified by GENSIM's LDA supports our keyword query: virus, protein, receptor, binding and similar.</p>
 <p>Lets display identified articles and their abstracts, we expect some odd 100 articles (which is more useful than classic literature search)
 semantic connection between articles in established on the basis of whole article-text analysis and not just based on classic literature keyword search where semantic interpretation is left to the user...</p>
 
@@ -13409,7 +13407,7 @@ semantic connection between articles in established on the basis of whole articl
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;top scored article no.: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;title:&quot;</span><span class="p">)</span> 
     <span class="nb">print</span><span class="p">(</span><span class="n">article</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span>  <span class="s2">&quot;abstract:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
@@ -14256,19 +14254,20 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-search-identified-angiotensin-related-articles-and-ACEII-receptor">The search identified angiotensin related articles and ACEII receptor<a class="anchor-link" href="#The-search-identified-angiotensin-related-articles-and-ACEII-receptor">&#182;</a></h3><p>A lot of related work on ACEII receptor and its S protein interactions were reported in COVID-19 primary literture recently</p>
-<p>our identified articles: <br>
+<p>Our identified articles: <br>
 1- Fast assessment of human receptor-binding capability of 2019 novel coronavirus (2019-nCoV)<br>
 Shocking effects of endothelial bradykinin B1 receptors<br>
 2- Type 1 angiotensin receptor pharmacology: Signaling beyond G proteins<br>
 3- Devil and angel in the renin-angiotensin system: ACE-angiotensin II-AT 1 receptor axis vs. ACE2-angiotensin-(1-7)-Mas receptor axis<br>
 4- ROLE OF CHANGES IN SARS-COV-2 SPIKE PROTEIN IN THE INTERACTION WITH THE HUMAN ACE2 RECEPTOR: AN IN SILICO ANALYSIS <br></p>
-<h3 id="and-on-and-on-and-on-...">and on and on and on ...<a class="anchor-link" href="#and-on-and-on-and-on-...">&#182;</a></h3><h3 id="Be-we-are-not-iterested-in-this-topic-are-we?-Can-we-find-something-else-?"><font color="red">Be we are not iterested in this topic are we? Can we find something else ?</font><a class="anchor-link" href="#Be-we-are-not-iterested-in-this-topic-are-we?-Can-we-find-something-else-?">&#182;</a></h3><h3 id="Lets-look-further:">Lets look further:<a class="anchor-link" href="#Lets-look-further:">&#182;</a></h3>
+<p>Can we directly mine the documents, MeDEP offers?</p>
+
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pass on ACE data</span>
@@ -14281,7 +14280,7 @@ Shocking effects of endothelial bradykinin B1 receptors<br>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;top scored article no.: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;title:&quot;</span><span class="p">)</span> 
         <span class="nb">print</span><span class="p">(</span><span class="n">article</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span>  <span class="s2">&quot;abstract:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span> <span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
@@ -14928,9 +14927,9 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1>Results: <br></h1>
-<h2><font color='red'>Lots of semantically connected data on virus-host receptor interactions - could this be directly useful for COVID-19</font><br></h2>
-<h4 id="1-.SARS-coronavirus-spike-receptor-binding-domain---RBD">1 .SARS coronavirus spike receptor-binding domain - RBD<a class="anchor-link" href="#1-.SARS-coronavirus-spike-receptor-binding-domain---RBD">&#182;</a></h4><h4 id="2.-immediate-surfactant-protein-D-and-activation-of-macrophages-correlation">2. immediate surfactant protein D and activation of macrophages correlation<a class="anchor-link" href="#2.-immediate-surfactant-protein-D-and-activation-of-macrophages-correlation">&#182;</a></h4><h4 id="3.-AB-binding-studies">3. AB-binding studies<a class="anchor-link" href="#3.-AB-binding-studies">&#182;</a></h4><h4 id="4.-immediate-cytokine-production-results">4. immediate cytokine production results<a class="anchor-link" href="#4.-immediate-cytokine-production-results">&#182;</a></h4><h4 id="5.-S1P-1-receptor">5. S1P 1 receptor<a class="anchor-link" href="#5.-S1P-1-receptor">&#182;</a></h4><h4 id="6.-CCR5-receptor">6. CCR5 receptor<a class="anchor-link" href="#6.-CCR5-receptor">&#182;</a></h4><h4 id="7.-FPR-N-formyl-peptide-receptor">7. FPR N-formyl peptide receptor<a class="anchor-link" href="#7.-FPR-N-formyl-peptide-receptor">&#182;</a></h4><h4 id="8.-various-viral-binding-to-cell-lines-studies">8. various viral binding to cell lines studies<a class="anchor-link" href="#8.-various-viral-binding-to-cell-lines-studies">&#182;</a></h4><h4 id="9.-Intercellular-Adhesion-Molecule-l">9. Intercellular Adhesion Molecule-l<a class="anchor-link" href="#9.-Intercellular-Adhesion-Molecule-l">&#182;</a></h4><h4 id="10.-TMPRSS2-protease">10. TMPRSS2 protease<a class="anchor-link" href="#10.-TMPRSS2-protease">&#182;</a></h4><h4 id="11.-CD147">11. CD147<a class="anchor-link" href="#11.-CD147">&#182;</a></h4><p>and on and on</p>
-<h4 id="lets-explore-CD147-and-print-topics"><font color="red">lets explore CD147 and print topics</font><a class="anchor-link" href="#lets-explore-CD147-and-print-topics">&#182;</a></h4>
+<p>Lots of semantically connected data on virus-host receptor interactions - could this be directly useful for COVID-19.</p>
+<h4 id="1-.SARS-coronavirus-spike-receptor-binding-domain---RBD">1 .SARS coronavirus spike receptor-binding domain - RBD<a class="anchor-link" href="#1-.SARS-coronavirus-spike-receptor-binding-domain---RBD">&#182;</a></h4><h4 id="2.-immediate-surfactant-protein-D-and-activation-of-macrophages-correlation">2. immediate surfactant protein D and activation of macrophages correlation<a class="anchor-link" href="#2.-immediate-surfactant-protein-D-and-activation-of-macrophages-correlation">&#182;</a></h4><h4 id="3.-AB-binding-studies">3. AB-binding studies<a class="anchor-link" href="#3.-AB-binding-studies">&#182;</a></h4><h4 id="4.-immediate-cytokine-production-results">4. immediate cytokine production results<a class="anchor-link" href="#4.-immediate-cytokine-production-results">&#182;</a></h4><h4 id="5.-S1P-1-receptor">5. S1P 1 receptor<a class="anchor-link" href="#5.-S1P-1-receptor">&#182;</a></h4><h4 id="6.-CCR5-receptor">6. CCR5 receptor<a class="anchor-link" href="#6.-CCR5-receptor">&#182;</a></h4><h4 id="7.-TMPRSS2-protease">7. TMPRSS2 protease<a class="anchor-link" href="#7.-TMPRSS2-protease">&#182;</a></h4><h4 id="8.-CD147">8. CD147<a class="anchor-link" href="#8.-CD147">&#182;</a></h4><p>We further explore CD147.</p>
+
 </div>
 </div>
 </div></section></section><section><section>
@@ -14943,7 +14942,7 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#view = nv.show_pdbid(&quot;5x0t&quot;)</span>
@@ -14974,7 +14973,7 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -14991,13 +14990,13 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="lets-explore-CD147-articles">lets explore CD147 articles<a class="anchor-link" href="#lets-explore-CD147-articles">&#182;</a></h4><h2 id="expecting-odd-50-articles---narow-down-on-the-examined-target">expecting odd 50 articles - narow down on the examined target<a class="anchor-link" href="#expecting-odd-50-articles---narow-down-on-the-examined-target">&#182;</a></h2>
+<h4 id="Exploration-of-CD147-related-articles">Exploration of CD147-related articles<a class="anchor-link" href="#Exploration-of-CD147-related-articles">&#182;</a></h4>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">interesting_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cd147&quot;</span><span class="p">]</span>
@@ -15030,9 +15029,21 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 <span class="n">NUM_TOPICS</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
 <span class="n">ldamodel</span> <span class="o">=</span> <span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_topics</span> <span class="o">=</span> <span class="n">NUM_TOPICS</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">passes</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">topics</span> <span class="o">=</span> <span class="n">ldamodel</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
 
-<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">enx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">topics</span><span class="p">):</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOPIC </span><span class="si">{}</span><span class="s2"> KEYWORDS: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;AND &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15049,16 +15060,16 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, u&#39;0.023*&#34;CD147&#34; + 0.012*&#34;apoptosis&#34; + 0.012*&#34;proinflammatory&#34; + 0.009*&#34;antiviral&#34; + 0.009*&#34;However,&#34;&#39;)
-(1, u&#39;0.027*&#34;virus&#34; + 0.027*&#34;influenza&#34; + 0.020*&#34;replication&#34; + 0.014*&#34;inhibit&#34; + 0.014*&#34;role&#34;&#39;)
-(2, u&#39;0.017*&#34;virus,&#34; + 0.012*&#34;inhibit&#34; + 0.012*&#34;include&#34; + 0.012*&#34;describe&#34; + 0.012*&#34;infectious&#34;&#39;)
-(3, u&#39;0.002*&#34;CD147&#34; + 0.001*&#34;virus&#34; + 0.001*&#34;cell&#34; + 0.001*&#34;human&#34; + 0.001*&#34;endothelial&#34;&#39;)
-(4, u&#39;0.036*&#34;CD147&#34; + 0.018*&#34;inhibit&#34; + 0.018*&#34;induce&#34; + 0.018*&#34;glycosylated&#34; + 0.018*&#34;differentiation&#34;&#39;)
-(5, u&#39;0.035*&#34;virus&#34; + 0.026*&#34;protein&#34; + 0.022*&#34;viral&#34; + 0.018*&#34;replication&#34; + 0.018*&#34;early&#34;&#39;)
-(6, u&#39;0.014*&#34;protein&#34; + 0.014*&#34;function&#34; + 0.014*&#34;provide&#34; + 0.014*&#34;believe&#34; + 0.008*&#34;viral&#34;&#39;)
-(7, u&#39;0.019*&#34;human&#34; + 0.019*&#34;meningococci&#34; + 0.019*&#34;adhesion&#34; + 0.019*&#34;meningococcal&#34; + 0.019*&#34;endothelial&#34;&#39;)
-(8, u&#39;0.031*&#34;cell&#34; + 0.013*&#34;CD147,&#34; + 0.013*&#34;mediate&#34; + 0.013*&#34;resistance&#34; + 0.013*&#34;survival&#34;&#39;)
-(9, u&#39;0.001*&#34;CD147&#34; + 0.001*&#34;study&#34; + 0.001*&#34;synovial&#34; + 0.001*&#34;synovioblast&#34; + 0.001*&#34;proinflammatory&#34;&#39;)
+<pre>TOPIC 1 KEYWORDS: protein AND mediate AND antiviral AND CD147 
+TOPIC 2 KEYWORDS: CD147 AND differentiation AND glycosylated AND inhibit 
+TOPIC 3 KEYWORDS: virus, AND infectious AND cyclophilins AND cause 
+TOPIC 4 KEYWORDS: protein AND antiviral AND response AND target 
+TOPIC 5 KEYWORDS: important AND major AND KSHV, AND severe 
+TOPIC 6 KEYWORDS: CD147 AND apoptosis AND inhibit AND However, 
+TOPIC 7 KEYWORDS: CD147 AND inhibit AND glycosylated AND differentiation 
+TOPIC 8 KEYWORDS: CD147 AND virus AND apoptosis AND synovioblast 
+TOPIC 9 KEYWORDS: protein AND believe AND function AND provide 
+TOPIC 10 KEYWORDS: virus AND influenza AND replication AND inhibit 
 </pre>
 </div>
 </div>
@@ -15067,38 +15078,17 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.023*&quot;CD147&quot; + 0.012*&quot;apoptosis&quot; + 0.012*&quot;proinflammatory&quot; + 0.009*&quot;antiviral&quot; + 0.009*&quot;However,&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.027*&quot;virus&quot; + 0.027*&quot;influenza&quot; + 0.020*&quot;replication&quot; + 0.014*&quot;inhibit&quot; + 0.014*&quot;role&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.017*&quot;virus,&quot; + 0.012*&quot;inhibit&quot; + 0.012*&quot;include&quot; + 0.012*&quot;describe&quot; + 0.012*&quot;infectious&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.002*&quot;CD147&quot; + 0.001*&quot;virus&quot; + 0.001*&quot;cell&quot; + 0.001*&quot;human&quot; + 0.001*&quot;endothelial&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.036*&quot;CD147&quot; + 0.018*&quot;inhibit&quot; + 0.018*&quot;induce&quot; + 0.018*&quot;glycosylated&quot; + 0.018*&quot;differentiation&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.035*&quot;virus&quot; + 0.026*&quot;protein&quot; + 0.022*&quot;viral&quot; + 0.018*&quot;replication&quot; + 0.018*&quot;early&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.014*&quot;protein&quot; + 0.014*&quot;function&quot; + 0.014*&quot;provide&quot; + 0.014*&quot;believe&quot; + 0.008*&quot;viral&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.019*&quot;human&quot; + 0.019*&quot;meningococci&quot; + 0.019*&quot;adhesion&quot; + 0.019*&quot;meningococcal&quot; + 0.019*&quot;endothelial&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.031*&quot;cell&quot; + 0.013*&quot;CD147,&quot; + 0.013*&quot;mediate&quot; + 0.013*&quot;resistance&quot; + 0.013*&quot;survival&quot;&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;0.001*&quot;CD147&quot; + 0.001*&quot;study&quot; + 0.001*&quot;synovial&quot; + 0.001*&quot;synovioblast&quot; + 0.001*&quot;proinflammatory&quot;&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Topics-seem-to-support-our-hypothesis">Topics seem to support our hypothesis<a class="anchor-link" href="#Topics-seem-to-support-our-hypothesis">&#182;</a></h3><h4 id="Lets-dig-in-the-articles">Lets dig in the articles<a class="anchor-link" href="#Lets-dig-in-the-articles">&#182;</a></h4>
+<h3 id="Topics-seem-to-support-our-hypothesis">Topics seem to support our hypothesis<a class="anchor-link" href="#Topics-seem-to-support-our-hypothesis">&#182;</a></h3><p>Further exploration of articles is also possible.</p>
+
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pass on ACE data</span>
@@ -15111,7 +15101,7 @@ Mycoplasma suis (M. suis) is an extracellular bacterial organism that attaches t
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;top scored article no.: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;title:&quot;</span><span class="p">)</span> 
         <span class="nb">print</span><span class="p">(</span><span class="n">article</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span>  <span class="s2">&quot;abstract:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span> <span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">top_docs_abstracts</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
@@ -15253,7 +15243,7 @@ Coronaviruses infect a variety of mammalian and avian species and cause serious 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="-Immediate-data-on-additional-S-protein-binding-partners-crutial-for-potential-novel-drug-research-(14-hits)"><font color="red"> Immediate data on additional S-protein binding partners crutial for potential novel drug research (14 hits)</font><a class="anchor-link" href="#-Immediate-data-on-additional-S-protein-binding-partners-crutial-for-potential-novel-drug-research-(14-hits)">&#182;</a></h2><p>Correlaction to previous data and hint on protein relevance in COVID-19</p>
+<h2 id="Immediate-data-on-additional-S-protein-binding-partners-crutial-for-potential-novel-drug-research-(14-hits)">Immediate data on additional S-protein binding partners crutial for potential novel drug research (14 hits)<a class="anchor-link" href="#Immediate-data-on-additional-S-protein-binding-partners-crutial-for-potential-novel-drug-research-(14-hits)">&#182;</a></h2><p>Correlaction to previous data and hint on protein relevance in COVID-19</p>
 <p>1st hit: SARS-CoV-2 invades host cells via a novel route: CD147-spike protein!</p>
 
 </div>
@@ -15272,7 +15262,7 @@ Antimalarials</p>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># small molcules</span>
@@ -15289,7 +15279,7 @@ Antimalarials</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -15308,13 +15298,13 @@ Antimalarials</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Are-there-any-&quot;big-molecules&quot;-reported-in-this-context-for-design-of-potential-new-drugs-?">Are there any "big molecules" reported in this context for design of potential new drugs ?<a class="anchor-link" href="#Are-there-any-&quot;big-molecules&quot;-reported-in-this-context-for-design-of-potential-new-drugs-?">&#182;</a></h2><h4 id="Meplazumab">Meplazumab<a class="anchor-link" href="#Meplazumab">&#182;</a></h4><p>(rationale: studied for treatment of malaria, hitlist literature support: Meplazumab treats COVID-19 pneumonia: an open-labelled, concurrent controlled add-on clinical trial) <br></p>
 <h4 id="Cyclophilin-A">Cyclophilin A<a class="anchor-link" href="#Cyclophilin-A">&#182;</a></h4><p>(rationale: CyPA recent studies indicate that it can be secreted by cells in response to inflammatory stimuli, implicated in viral infections, hitlist literature support: Suppression of Coronavirus Replication by Cyclophilin Inhibitors)</p>
-<h2 id="yes">yes<a class="anchor-link" href="#yes">&#182;</a></h2>
+
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># big molls</span>
@@ -15343,7 +15333,7 @@ Antimalarials</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -15359,7 +15349,7 @@ Antimalarials</p>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;CyPA&quot;</span><span class="p">)</span>
@@ -15387,7 +15377,7 @@ Antimalarials</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -15404,8 +15394,8 @@ Antimalarials</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="-Our-toolset-successfully-retrieves-critical-information-useful-in-medicinal-chemistry-and/or-drug-research-scenario-!"><font color="red"> Our toolset successfully retrieves critical information useful in medicinal chemistry and/or drug research scenario !</font><a class="anchor-link" href="#-Our-toolset-successfully-retrieves-critical-information-useful-in-medicinal-chemistry-and/or-drug-research-scenario-!">&#182;</a></h1><p>Critical observation - semantically pre-linked data reveals article connections not necessary identifiable via classic literature search and can provide invaluable research data for further potential drug research !</p>
-<h3 id="output-data-can-easily-be-plugged-in-other-search-engines-and-expanded-upon-as-necessary">output data can easily be plugged in other search engines and expanded upon as necessary<a class="anchor-link" href="#output-data-can-easily-be-plugged-in-other-search-engines-and-expanded-upon-as-necessary">&#182;</a></h3>
+<h1 id="Our-toolset-successfully-retrieves-critical-information-useful-in-medicinal-chemistry-and/or-drug-research-scenario-!">Our toolset successfully retrieves critical information useful in medicinal chemistry and/or drug research scenario !<a class="anchor-link" href="#Our-toolset-successfully-retrieves-critical-information-useful-in-medicinal-chemistry-and/or-drug-research-scenario-!">&#182;</a></h1><p>Critical observation - semantically pre-linked data reveals article connections not necessary identifiable via classic literature search and can provide invaluable research data for further potential drug research !</p>
+<h3 id="output-data-can-easily-be-plugged-in-other-search-engines-and-expanded-if-necessary">output data can easily be plugged in other search engines and expanded if necessary<a class="anchor-link" href="#output-data-can-easily-be-plugged-in-other-search-engines-and-expanded-if-necessary">&#182;</a></h3>
 </div>
 </div>
 </div></section></section>
