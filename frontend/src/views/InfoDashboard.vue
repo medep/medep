@@ -72,10 +72,10 @@
 
                         <v-tabs fixed-tabs>
                         <v-tab>
-                            Protocols
+                            Phases and Protocols
                         </v-tab>
                             <v-tab>
-                                Drugs
+                                Drugs used for treatment
                             </v-tab>
 
                             <v-tab-item>

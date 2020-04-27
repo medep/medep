@@ -61,6 +61,20 @@
 
         </v-row>
 
+        <v-snackbar
+                v-model="snackbar"
+                :timeout="5000"
+        >
+            Notice: the data presented here is generated at random.
+            <v-btn
+                    color="blue"
+                    text
+                    @click="snackbar = false"
+            >
+                Close
+            </v-btn>
+        </v-snackbar>
+		
     </v-container>
 </template>
 
