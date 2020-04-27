@@ -67,7 +67,7 @@ public class FakeDataFactory {
 	}
 
 	static List<String> getRandomPeople() {
-		return getRandom(PEOPLE);
+		return getRandom(PEOPLE,4);
 	}
 
 	static List<Attribute> getRandomAttributes() {
@@ -88,10 +88,18 @@ public class FakeDataFactory {
 			return "nominal";
 	}
 
+	static int randIntBetween(int low, int high) {
+		return RND.nextInt(high-low) + low;
+	}
+	
+	static float randFloatBetween(float low, float high) {
+		return (float)(low + RND.nextDouble() * (high - low));
+	}
+	
 	static List<Object> getRandomData(List<Attribute> attributes) {
 
 		List<Object> val = new ArrayList<>();
-		int cnt = RND.nextInt(50);
+		int cnt = randIntBetween(30,50);
 
 		do {
 			List<Object> row = new ArrayList<>();
@@ -99,10 +107,10 @@ public class FakeDataFactory {
 
 				switch (att.getAttributeType()) {
 				case "numeric":
-					row.add(RND.nextFloat()*RND.nextInt(10));
+					row.add(randFloatBetween(10F,40F));
 					break;
 				case "decimal":
-					row.add(RND.nextInt(100));
+					row.add(randIntBetween(30,80));
 					break;
 				default:
 					row.add(RND.nextBoolean() ? 1 : 0);
