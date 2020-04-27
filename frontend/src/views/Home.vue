@@ -7,21 +7,26 @@
                 justify="center"
         >
             <v-col>
-                <h1>Enter the medical data exploitation platform.</h1>
-
-                Today, data is everywhere. Current technology, including AI, is already capable of doing great things
-                by leveraging data, but the fundamental problem remains:
-
-                <v-banner class="ma-7" color="green" dark elevation="3"><i>How to efficiently access the data and actually do research with it?</i></v-banner>
+                <h1>We are solving a difficult problem</h1>
+				
                 <p>
+                    Hospitals and healthcare-related organizations use complex information systems. These systems store and process vast amounts of data which must 
+					be properly handled. In addition to legal aspects (e.g., GDPR), purely technical problems such as cybersecurity,
+                    identity management, persistent and immutable storage, auditing, high-availability, fault-tolerance, backup management and much more need to be addressed. 
+				</p>
+				
+				<p>The listed technicalities are usually not the first thing that comes to mind when talking about data analysis. However, they are very much present 
+				in the highly-regulated domains such as healthcare. <br /><br />
+				
+				Today, data is everywhere. Current technology, including AI, is already capable of doing great things
+                by leveraging data, but the fundamental problem remains:
+                <v-banner class="ma-7" color="green" dark elevation="3">
+				<i>How to efficiently access the data and actually do research with it?</i>
+				</v-banner>
 
-                    On the other hand, hospitals and CDCs have complex information systems that must comply with
-                    legislation such as GDPR.
-                    Handling personal data comes with high responsibility, thus care must be taken of cybersecurity,
-                    identity management, persistent and immutable storage, auditing, privacy and much more.
-
-
-                <h2>What is MeDEP offering?</h2>
+				</p>
+				
+                <h2>Here is how we can help you</h2>
 
             </v-col>
         </v-row>
@@ -35,9 +40,9 @@
                             height="200px"
                             src="../assets/three-person-looking-at-x-ray-result-1170979.jpg"
                     ></v-img>
-                    <v-card-subtitle>Are you a doctor that needs to go efficiently through a fast growing body of
+                    <v-card-subtitle>Are you a medical doctor that needs to efficiently browse a fast growing body of
                         literature,
-                        regarding covid-19? Are you interested only in particular aspects of the disease?
+                        regarding COVID-19? Are you interested only in particular aspects of the disease?
                     </v-card-subtitle>
                     <v-card-text>
                         By using AI, more than 30.000 biomedical documents have been automatically annotated with
@@ -64,7 +69,7 @@
                         Probably not.
                     </v-card-subtitle>
                     <v-card-text>
-                        Let <b>MeDEP local</b> take care of data moving, cleaning, anonymization, access control,
+                        Let MeDEP take care of data moving, cleaning, anonymization, access control,
                         audit
                         trails,
                         versioning, etc. and let the analysts use their time to actually analyze the data, and
@@ -106,47 +111,10 @@
 
         </v-row>
 
-        <h2>Are you interested in MeDEP?</h2>
-        Click
+        <h3>Are you interested in MeDEP? Click
         <router-link :to="{name:'solution'}">here</router-link>
-        to learn more.
-
-
-        Cybersecurity, identity management, persistent and immutable storage, auditing,
-        privacy and much more has to be taken into account.
-
-        All these requirements are met by using specifically designed software solutions,
-        which are often maintained by independent software vendors.
-        That kind of data access is usually not enough to do research.
-
-        Enter the medical data exploitation platform.
-
-        2)
-        [fensi šmensi overall complexity & hospital IS related gibberish] - martin
-        dasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd
-        sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd sadasd
-        sadasd sadasd sadasd sadasd sadasd sa
-        apache airflow --> periodicne analize
-
-        The platform enables faster and more efficient research by providing access to various relevant medical and
-        business-focused data sources. Clean and anonymised data are readily available for use by researchers and
-        business analysts.
-
-
-        3)
-        Currently, the platform is in prototype phase.
-        It allows access to publicly available literature related to novel corona virus. Our search engine goes beyond
-        simple keyword search and uses cutting edge AI approaches to automatically annotate whole scientific documents.
-        We regularly update the database which currently contains more than 30.000 documents.
-
-        Our platform also offers a unique view of novel corona virus incidence, coupled with side-by-side information
-        about the stock exchange sentiment, medical protocols, legislation changes.
-
-        To showcase the power of our platform, we have prepared four case studies. They encompass visualization and
-        topic detection in existing literature, a cross-hospital predictive novel corona virus modeling scenario, and
-        drug candidate detection.
-
-
+        to learn more.</h3>
+        
     </v-container>
 </template>
 
