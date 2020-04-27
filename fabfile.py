@@ -18,7 +18,7 @@ def deploy():
         puts(magenta("[Updating containers]"))
         run('docker-compose -f docker-compose.production.yml pull')
         run('docker-compose -f docker-compose.production.yml up -d')
-        # run('yes | docker system prune -a')
+        run('yes | docker system prune -a')
 
 
 
