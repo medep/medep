@@ -12,7 +12,7 @@
                 Today, data is everywhere. Current technology, including AI, is already capable of doing great things
                 by leveraging data, but the fundamental problem remains:
 
-                <p><i>How to efficiently access the data and actually do research with it?</i>
+                <v-banner class="ma-7" color="green" dark elevation="3"><i>How to efficiently access the data and actually do research with it?</i></v-banner>
                 <p>
 
                     On the other hand, hospitals and CDCs have complex information systems that must comply with
