@@ -3,6 +3,8 @@ version: '3.7'
 services:
   covid19proxy:
     image: docker.pkg.github.com/medep/medep/covid19proxy:latest
+    build:
+      context: ./covid19proxy/
     expose:
       - 80
     networks:
@@ -16,6 +18,8 @@ services:
       - "traefik.enable=true"
   umcm:
     image: docker.pkg.github.com/medep/medep/backend:latest
+    build:
+      context: ./backend/.
     restart: always
     expose:
       - 8080
@@ -32,6 +36,8 @@ services:
       - "traefik.enable=true"
   frontend:
     image: docker.pkg.github.com/medep/medep/frontend:latest
+    build:
+      context: ./frontend/.
     restart: always
     expose:
       - 80
