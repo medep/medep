@@ -17,14 +17,10 @@ Advocate MeDEP platform within your organisation to get access to readily availa
 Healthcare IT ecosystems are incredibly complex, developed and maintained by many vendors and often poorly integrated. This results in technical difficulties and data integrity issues on a daily basis. It is becoming increasingly difficult to obtain quality data.
 MeDEP solves issues related to data acquisition and comes in two flawors: MeDEP local and MeDEP federated. Choose your weapon!
 
- <div class="row">
-  <div class="column">
-    <img src="frontend/src/assets/medep-local.png" alt="medep local" width="300"  hspace="50">
-  </div>
-  <div class="column">
-    <img src="frontend/src/assets/medep-federated.png" alt="medep federated" width="300">
-  </div>
-</div>
+<p float="left">
+  <img src="frontend/src/assets/medep-local.png" alt="medep local" width="300"  hspace="50"/>
+  <img src="frontend/src/assets/medep-federated.png" alt="medep federated" width="300"/>
+</p>
 
 ## Info Dashboard
 
