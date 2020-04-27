@@ -36,7 +36,7 @@ MeDEP solves many issues related to data acquisition and comes in two flawors: M
                     <v-img
                             class="white--text align-end"
                             height="300px"
-                            src="../assets/medep-local.jpg"
+                            src="../assets/medep-local.png"
                     ></v-img>
                     <v-card-subtitle>MeDEP local: join all organizational data sources
                     </v-card-subtitle>
@@ -53,7 +53,7 @@ MeDEP solves many issues related to data acquisition and comes in two flawors: M
                     <v-img
                             class="white--text align-end"
                             height="300px"
-                            src="../assets/medep-federated.jpg"
+                            src="../assets/medep-local.png"
                     ></v-img>
                     <v-card-subtitle>MeDEP federated: Harness the real power of connected world
                     </v-card-subtitle>
@@ -67,7 +67,7 @@ MeDEP solves many issues related to data acquisition and comes in two flawors: M
         </v-row>
 				
 	 
-	         <v-row                align="center"                justify="center"        >
+	   <v-row align="center" justify="center">
             <v-col>
 	
 	<h2>Technical details</h2>
