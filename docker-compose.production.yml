@@ -15,6 +15,21 @@ services:
       - "traefik.frontend.rule=Host:covid19explorer.medep.org"
       - "traefik.port=80"
       - "traefik.enable=true"
+  umcm:
+    build:
+      context: ./backend
+    restart: always
+    expose:
+      - 8080
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.backend=umcm"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:umcm.medep.org"
+      - "traefik.port=8080"
+      - "traefik.enable=true"
   frontend:
     build:
       context: ./frontend
