@@ -4,7 +4,7 @@
     >
         <v-row class="col-12"
         >
-            <v-col class="col-4">
+            <v-col class="col-md-4">
                 <v-card
                         outlined link to="/use-cases/1">
 
@@ -28,7 +28,7 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            <v-col class="col-4">
+            <v-col class="col-md-4">
                 <v-card
                         outlined link to="/use-cases/2">
 
@@ -52,7 +52,7 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            <v-col class="col-4">
+            <v-col class="col-md-4">
                 <v-card
                         outlined link to="/use-cases/3">
 
@@ -79,7 +79,7 @@
                     </v-card-actions>
                 </v-card>
             </v-col>
-            <v-col class="col-4">
+            <v-col class="col-md-4">
                 <v-card
                         outlined link to="/use-cases/4">
 
