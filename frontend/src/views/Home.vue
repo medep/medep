@@ -22,7 +22,7 @@
                 <v-banner class="ma-7" color="green" dark elevation="3">
 				Today, data is everywhere. Current technology, including AI, is already capable of doing great things
                 by leveraging data, but the fundamental problem remains:
-				<i>How to efficiently access the data and actually do research with it?</i>
+				<i>How to efficiently access the data and actually conduct research?</i>
 				</v-banner>
 
 				</p>
@@ -41,7 +41,7 @@
                             height="200px"
                             src="../assets/three-person-looking-at-x-ray-result-1170979.jpg"
                     ></v-img>
-                    <v-card-subtitle>Are you a medical doctor that needs to efficiently browse a fast growing body of
+                    <v-card-subtitle>Are you a <b>medical doctor</b> that needs to efficiently browse a fast growing body of
                         literature,
                         regarding COVID-19? Are you interested only in particular aspects of the disease?
                     </v-card-subtitle>
@@ -64,7 +64,7 @@
                             height="200px"
                             src="../assets/blue-and-silver-stetoscope-40568.jpg"
                     ></v-img>
-                    <v-card-subtitle>Are you a part of hospital management staff? Do you want your analysts to work
+                    <v-card-subtitle>Are you a part of your organization's <b>management staff</b>? Do you want your analysts to work
                         on
                         outdated data?
                         Probably not.
@@ -91,7 +91,7 @@
                             src="../assets/person-writing-on-notebook-669615.jpg"
                     >
                     </v-img>
-                    <v-card-subtitle>Are you a data scientist who is wasting time on data sourcing and wrangling, rather
+                    <v-card-subtitle>Are you a <b>data scientist</b> who is wasting time on data sourcing and wrangling, rather
                         than building
                         models and doing research?
                     </v-card-subtitle>
